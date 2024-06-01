@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './glossary.component.html',
   styleUrl: './glossary.component.css'
 })
-export class GlossaryComponent {
+export default class GlossaryComponent {
 
 }
