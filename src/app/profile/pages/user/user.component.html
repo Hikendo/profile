@@ -14,16 +14,5 @@
             </div>
 
           </div>
-  <div class="float-start">
-    @for (menuItem of menuProfile(); track menuItem.nameItem) {
 
-      <button (click)="toggleShowMenu( menuItem.nameItem)" [disabled]="menuItem.show"
-      class="inline-block bg-sky-200 rounded-full px-3 py-1 text-sm font-semibold
-       text-gray-700 mr-2 m-2 mb-2 cursor-pointer  hover:bg-black hover:text-white
-        disabled:pointer-events-none disabled:bg-slate-100">
-      {{menuItem.describe}} </button>
-
-    }
-
-  </div>
 

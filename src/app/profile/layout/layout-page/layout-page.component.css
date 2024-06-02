@@ -15,7 +15,7 @@
   margin: 0; /* Remueve los márgenes */
 }
 
-.menu-flotante ul li a {
+.menu-flotante ul li button {
   display: block; /* Hace que los enlaces llenen el espacio horizontal */
   text-decoration: none; /* Remueve el subrayado de los enlaces */
   padding: 10px; /* Añade padding para los enlaces */
@@ -23,7 +23,7 @@
   background-color: #f9f9f952; /* Color de fondo para los enlaces */
 }
 
-.menu-flotante ul li a:hover {
+.menu-flotante ul li button:hover {
   background-color: #ddd; /* Color de fondo al pasar el mouse */
 }
 .menu-flotante ul li a:active {
