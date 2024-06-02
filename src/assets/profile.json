@@ -6,7 +6,10 @@
       "phoneNumber": "712 213 9696",
       "address": "El Oro, Estado de México",
       "linkedin": "https://www.linkedin.com/in/jos%C3%A9-manuel-mart%C3%ADnez-antonio-487a4813a/",
-      "github": "https://github.com/Hikendo"
+      "github": "https://github.com/Hikendo",
+      "url":"",
+      "imgUrl":"assets/pepe.jpg"
+
     },
     "abstract":"Soy un desarrollador con más de 8 años de experiencia como Ingeniero en Computación especializado en Desarrollo Web, con especialización en tecnologías como JavaScript, HTML, CSS, Angular y React. Mi trayectoria me ha permitido participar en la planificación de sprints, definición de historias de usuario, análisis de requisitos y diseño de módulos. La codificación de componentes, módulos, servicios y su integración continua en sistemas de control de versiones ha sido una de mis principales responsabilidades. En mi último proyecto, como parte del equipo de Softtek, colaboré como Desarrollador Web utilizando la herramienta Business Automation Workflow (BAW) de IBM, lo que me permitió aprender sobre BPMN (Business Process Model Notation) para analizar componentes heredados, ejecutar pruebas y migrar servicios. Me caracterizo por ser proactivo, trabajar en equipo y estar comprometido con la excelencia en cada tarea. Mi enfoque se centra en encontrar soluciones efectivas ante cualquier desafío, seguido de un análisis exhaustivo para mejorar y optimizar procesos. Simplificar y hacer eficiente cada actividad es mi objetivo principal. Estoy convencido de que mi experiencia y habilidades pueden ser un valioso aporte para su equipo, donde puedo seguir creciendo y contribuyendo al éxito de los proyectos. 'El éxito se construye con la proactividad de cada individuo y la fuerza del trabajo en equipo. Juntos, no solo alcanzamos nuestras metas, sino que las superamos.' ",
     "workExperience": [
@@ -85,7 +88,7 @@
     "education":[
       {
         "academicDegree":"Ingeniería en Computación",
-        "institution":"Centro Universitario UAEM Atlacomulco",
+        "institution":"Universidad Autónoma del Estado de México",
         "startDate":"2010",
         "endDate":"2015"
       }

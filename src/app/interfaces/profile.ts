@@ -28,6 +28,8 @@ export interface Data {
   address:     string;
   linkedin:    string;
   github:      string;
+  url?:         string;
+  imgUrl?:      string;
 }
 
 export interface Education {

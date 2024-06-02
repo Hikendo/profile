@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-head',
+  selector: 'app-welcome',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './head.component.html',
-  styleUrl: './head.component.css'
+  templateUrl: './welcome.component.html',
+  styleUrl: './welcome.component.css'
 })
-export class HeadComponent {
+export default class WelcomeComponent {
 
 }

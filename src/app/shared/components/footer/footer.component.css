@@ -1,0 +1,12 @@
+footer {
+  display:hidden;
+  position: fixed;
+  bottom: 0%;
+  width: 98%;
+}
+footer:hover {
+  display:block;
+  position: fixed;
+  bottom: 0%;
+  width: 98%;
+}
