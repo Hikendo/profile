@@ -1,1 +1,26 @@
-<p>job-experience works!</p>
+@defer (on timer(1s)) {
+<div class="shadow-lg  bg-gradient-to-bl from-orange-50 from-1% via-white via-10% to-transparent
+rounded col-start-2 col-span-3">
+  @for (work of user()?.profesionalProfile?.workExperience; track $index) {
+    <ul>
+      <li>Empresa:  {{work.enterprise}}</li>
+      <li>Puesto : {{work.jobTitle}} </li>
+      <li>Fecha : {{work.startDate }}</li>
+        <ul>
+        @for (activity of work.activities; track $index) {
+          <li>{{activity }}</li>
+        }
+        </ul>
+
+    </ul>
+    <hr class="mt-5">
+
+
+  }
+</div>
+
+}@placeholder {
+  <app-loading></app-loading>
+
+}
+

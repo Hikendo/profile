@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SummaryComponent } from './summary.component';
+import  SummaryComponent  from './summary.component';
 
 describe('SummaryComponent', () => {
   let component: SummaryComponent;
@@ -11,7 +11,7 @@ describe('SummaryComponent', () => {
       imports: [SummaryComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(SummaryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

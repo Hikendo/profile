@@ -1,54 +1,34 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import {  RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
-import { UserComponent } from '../../pages/user/user.component';
-interface MenuProfile{
-  nameItem: string;
-  describe: string;
-  show: boolean;
-}
+import  UserComponent  from '../../pages/user/user.component';
+import SummaryComponent from '../../pages/summary/summary.component';
+import JobExperienceComponent from '../../pages/job-experience/job-experience.component';
+import SkillsComponent from '../../pages/skills/skills.component';
+import AcademicBackgroundComponent from '../../pages/academic-background/academic-background.component';
+import { UserService } from '../../../services/user.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faAngleLeft, faBars, faClose } from '@fortawesome/free-solid-svg-icons';
+
+
+
 @Component({
   selector: 'app-layout-page',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, RouterModule, UserComponent],
+  imports: [RouterLink, RouterLinkActive, RouterModule, UserComponent, SummaryComponent,
+     JobExperienceComponent, SkillsComponent, AcademicBackgroundComponent, UserComponent, FontAwesomeModule],
   templateUrl: './layout-page.component.html',
   styleUrl: './layout-page.component.css'
 })
 export default class LayoutPageComponent {
-  public menuProfile= signal<MenuProfile[]>([
-    {
-      nameItem: 'infoUser',
-      describe: 'Datos Generales',
-      show:true
+  public menuFloat= inject(UserService)
+  faMenu= faBars;
 
-    },
-    {
-      nameItem: 'profile',
-      describe: 'Perfil Profesional',
-      show:false
-
-    },
-    {
-      nameItem: 'skills',
-      describe: 'Experiencia',
-      show:false
-
-    },
-    {
-      nameItem: 'jobs',
-      describe: 'Idiomas',
-      show:false
-
-    },
-    {
-      nameItem: 'courses',
-      describe: 'Formación Adicional',
-      show:false
-
-    },
-
-  ]);
   toggleShowMenu( item : string):void{
-    alert(item);
+   // alert(item);
+
+     this.menuFloat.toggleShowMenu(item);
+
+
 
   }
 }

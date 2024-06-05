@@ -1,1 +1,21 @@
-<p>skills works!</p>
+@defer (on timer(1s)) {
+<h1>Habilidades tecnicas</h1>
+@for (item of user()?.profesionalProfile?.technicalSkills; track $index) {
+  <p> {{item.skill}} </p>
+}
+
+<h1>Habilidades interpersonales</h1>
+
+@for (item of user()?.profesionalProfile?.interpersonalSkills; track $index) {
+  <p> {{item}} </p>
+}
+<h1>Idiomas</h1>
+
+@for (item of user()?.profesionalProfile?.languages; track $index) {
+  <p> {{item.language}} </p>
+}
+
+}@placeholder {
+  <app-loading></app-loading>
+
+}

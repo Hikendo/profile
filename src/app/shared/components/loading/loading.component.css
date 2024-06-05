@@ -1,0 +1,19 @@
+/*.filter-red {
+  filter: invert(24%) sepia(100%) saturate(7386%) hue-rotate(345deg) brightness(103%) contrast(104%);
+}*/
+
+
+@keyframes load-efect {
+  0% { filter: invert(24%) sepia(100%) saturate(7386%) hue-rotate(302deg) brightness(103%) contrast(104%);opacity: 1;} /* Rojo */
+  50% { filter: invert(24%) sepia(100%) saturate(7386%) hue-rotate(280deg) brightness(103%) contrast(104%);opacity: 0.1;} /* Rojo */
+  100% { filter: invert(24%) sepia(100%) saturate(7386%) hue-rotate(50deg) brightness(103%) contrast(104%);opacity: 1;} /* Rojo */
+
+}
+
+.loading {
+
+  /* centrar vertical y horizontalmente */
+
+  animation: load-efect 3s infinite;
+
+}

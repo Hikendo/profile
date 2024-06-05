@@ -1,1 +1,19 @@
-<p>summary works!</p>
+<div class=" p-14 text-justify text-lg
+bg-gradient-to-bl from-orange-50 from-1% via-white via-10% to-transparent
+rounded-md ">
+
+  @defer ( on timer(1s)) {
+
+      @for (paragraph of paragraphs; track $index; let even= $even, odd= $odd) {
+          <p [class]="{'txt-move-left': even, 'txt-move-right': odd }"> {{paragraph}}. </p>
+
+
+      }
+
+
+  }@placeholder {
+    <app-loading></app-loading>
+
+  }
+
+  </div>

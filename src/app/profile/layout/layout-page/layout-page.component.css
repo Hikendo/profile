@@ -1,31 +1,51 @@
 /* Estilo para el contenedor del menú */
-.menu-flotante {
+.float-menu {
   top: 0; /* Alineado a la parte superior */
-  position: sticky;
-  left: 0; /* Alineado a la derecha */
-  width: 200px; /* Ancho del menú */
+  position: relative;
+  right: 0; /* Alineado a la derecha */
+  width: 80%; /* Ancho del menú */
   background-color: #f9f9f943; /* Color de fondo del menú */
   z-index: 1000; /* Asegura que el menú esté sobre otros elementos */
 }
 
 /* Estilo para los elementos del menú */
-.menu-flotante ul {
+.float-menu ul {
   list-style-type: none; /* Remueve los estilos de lista */
   padding: 0; /* Remueve el padding */
   margin: 0; /* Remueve los márgenes */
 }
 
-.menu-flotante ul li button {
+.float-menu ul li {
   display: block; /* Hace que los enlaces llenen el espacio horizontal */
   text-decoration: none; /* Remueve el subrayado de los enlaces */
   padding: 10px; /* Añade padding para los enlaces */
   color: #333; /* Color del texto */
   background-color: #f9f9f952; /* Color de fondo para los enlaces */
+  width: 100%;
 }
 
-.menu-flotante ul li button:hover {
-  background-color: #ddd; /* Color de fondo al pasar el mouse */
+.float-menu ul li :hover {
+  background-color: #b892bb79; /* Color de fondo al pasar el mouse */
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+
 }
-.menu-flotante ul li a:active {
-  background-color: #a1d2f1; /* Color de fondo al pasar el mouse */
+.float-menu ul li :disabled {
+  background-color: #9f878758; /* Color de fondo al pasar el mouse */
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  pointer-events: none;
+
+}
+@keyframes reveal-animation{
+  0%{  opacity: 0;
+  }
+  100%{  opacity: 1;
+  }
+}
+.reveal{
+  animation: reveal-animation 5s;
+
 }

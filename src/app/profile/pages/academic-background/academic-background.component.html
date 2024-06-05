@@ -1,1 +1,12 @@
-<p>academic-background works!</p>
+@defer (on timer(1s)) {
+  @for (item of user()?.profesionalProfile?.courses; track $index) {
+    <p> {{item.name}} </p>
+  }
+}@placeholder {
+  <app-loading></app-loading>
+
+}
+
+
+
+
