@@ -1,6 +1,9 @@
 
 .bkg-h{
   z-index: -1 ;
+  background-position: right bottom;
+  background-attachment:fixed;
+background-repeat: no-repeat;
   height: 140vh;
-
+  background-color: linear-gradient(90deg, rgba(252,252,251,1) 0%, rgb(212, 212, 155) 24%, rgba(255,251,240,1) 47%, rgba(255,254,235,1) 100%);
 }

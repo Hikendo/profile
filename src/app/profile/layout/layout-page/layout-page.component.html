@@ -1,22 +1,9 @@
-<div class="grid grid-cols-5 gap-1">
-      <div class=" flex flex-1">
-        <div class="float-menu ">
-        <ul>
-          <li class=""><button> <fa-icon [icon]="faMenu"></fa-icon> Menú </button></li>
-          @for (menuItem of menuFloat.menuProfile(); track menuItem.nameItem) {
-            <li >
-              <button [disabled]="menuItem.show"
-              [routerLink]="'/dashboard/profile/'+menuItem.nameItem"
-              (click)="toggleShowMenu(menuItem.nameItem)"  >{{menuItem.describe}}</button>
-            </li>
-          }
-
-
-        </ul>
-      </div>
+<div class="grid grid-cols-5 gap-4 mt-16 ">
+      <div class=" col-span-1">
+        <app-menu-profile></app-menu-profile>
     </div>
   <div class="shadow-lg  bg-gradient-to-tl from-orange-50 from-15% via-white via-30% to-transparent
-  rounded col-start-2 col-span-3">
+   col-start-2 col-span-4">
       <router-outlet></router-outlet>
   <div>
 

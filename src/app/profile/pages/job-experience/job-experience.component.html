@@ -1,6 +1,9 @@
+<h4 class="pt-4 pl-5 text-center">Experiencia laboral</h4>
+
 @defer (on timer(1s)) {
-<div class="shadow-lg  bg-gradient-to-bl from-orange-50 from-1% via-white via-10% to-transparent
-rounded col-start-2 col-span-3">
+
+  <div class="pl-8 pr-14 pb-14">
+    <div class="p-5 rounded-lg  backdrop-blur-xl text-justify text-lg">
   @for (work of user()?.profesionalProfile?.workExperience; track $index) {
     <ul>
       <li>Empresa:  {{work.enterprise}}</li>
@@ -18,7 +21,7 @@ rounded col-start-2 col-span-3">
 
   }
 </div>
-
+</div>
 }@placeholder {
   <app-loading></app-loading>
 

@@ -1,1 +1,14 @@
-<p>menu-profile works!</p>
+<div class="float-menu ">
+  <ul>
+    <li class=""><button> <fa-icon [icon]="faMenu"></fa-icon> Menú </button></li>
+    @for (menuItem of menuFloat.menuProfile(); track menuItem.nameItem) {
+      <li >
+        <button [disabled]="menuItem.show"
+        [routerLink]="'/dashboard/profile/'+menuItem.nameItem"
+        (click)="toggleShowMenu(menuItem.nameItem)"  >{{menuItem.describe}}</button>
+      </li>
+    }
+
+
+  </ul>
+</div>
