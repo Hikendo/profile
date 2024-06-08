@@ -1,27 +1,41 @@
+
 <h4 class="pt-4 pl-5 text-center">Habilidades</h4>
 
-<div class="pl-8 pr-14 pb-14">
-  <div class="p-5 rounded-lg  backdrop-blur-xl text-justify text-lg">
-    @defer (on timer(1s)) {
-    <h1>Habilidades tecnicas</h1>
-    @for (item of user()?.profesionalProfile?.technicalSkills; track $index) {
-      <p> {{item.skill}} </p>
+<div class="mb-4 border-b border-gray-200 dark:border-gray-700 pl-14">
+  <ul class="flex flex-wrap -mb-px text-sm  text-center" >
+
+
+  @for (skill of menuSkill; track $index;) {
+      <li [class]="{'text-purple-500': skill.show ,'font-bold': skill.show, 'text-gray-600': !skill.show}" >
+          <button class="inline-block p-4 border-b-2 rounded-t-lg text-lg"
+          type="button" (click)="showSkill(skill.id)"> {{skill.typeSkill}} | </button>
+      </li>
     }
 
-    <h1>Habilidades interpersonales</h1>
-
-    @for (item of user()?.profesionalProfile?.interpersonalSkills; track $index) {
-      <p> {{item}} </p>
-    }
-    <h1>Idiomas</h1>
-
-    @for (item of user()?.profesionalProfile?.languages; track $index) {
-      <p> {{item.language}} </p>
-    }
-
-    }@placeholder {
-      <app-loading></app-loading>
-
-    }
-    </div>
+  </ul>
 </div>
+@defer (on timer(1s)) {
+  @for (skill of menuSkill; track $index;) {
+
+      <div *ngIf="skill.show && skill.id ===1">
+        @for (item of user()?.profesionalProfile?.technicalSkills; track $index) {
+          <p> {{item.skill}} </p>
+        }
+
+      </div>
+      <div *ngIf="skill.show && skill.id ===2">
+        @for (item of user()?.profesionalProfile?.interpersonalSkills; track $index) {
+          <p> {{item}} </p>
+        }
+      </div>
+      <div *ngIf="skill.show && skill.id ===3">
+        @for (item of user()?.profesionalProfile?.languages; track $index) {
+          <p> {{item.language}} </p>
+        }
+      </div>
+    }
+}@placeholder {
+  <app-loading></app-loading>
+
+}
+

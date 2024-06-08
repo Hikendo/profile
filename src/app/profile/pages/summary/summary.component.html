@@ -4,8 +4,8 @@
   <div class="p-5 rounded-lg backdrop-blur-xl text-justify text-lg">
   @defer ( on timer(1s)) {
 
-      @for (paragraph of paragraphs; track $index; let even= $even, odd= $odd) {
-          <p [class]="{'txt-move-left': even, 'txt-move-right': odd }"> {{paragraph}}. </p>
+      @for (paragraph of paragraphs; track $index;) {
+          <p class="txt-desv"> {{paragraph}}. </p>
 
 
       }

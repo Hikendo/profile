@@ -30,6 +30,7 @@ export default class JobExperienceComponent implements OnInit{
 
   public jobList= this.getJobListLocalStorage();
 
+
   getJobListLocalStorage(){
     if (localStorage.getItem('dateShowTab')) {
       return JSON.parse(localStorage.getItem('dateShowTab')!);
@@ -40,18 +41,20 @@ export default class JobExperienceComponent implements OnInit{
   setJobListLocalStorage(){
     if (this.user()) {
       this.jobList = this.user()!.profesionalProfile.workExperience.map((date: WorkExperience, index) =>
-        index>0 ?[{...date, 'show': false }]: [{...date, 'show': true }]);
-      localStorage.setItem('dateShowTab',JSON.stringify(this.jobList))
+        index > 0 ? {...date, 'show': false }: {...date,  'show': true });
+      localStorage.setItem('dateShowTab',JSON.stringify(this.jobList));
+
+
 
     }
   }
 
 
   showJob(endDate : string){
-    this.jobList = this.user()!.profesionalProfile.workExperience.map((date: WorkExperience, index) =>
-      endDate===date.endDate ?[{...date, 'show': true }]: [{...date, 'show': false }]);
+     this.jobList = this.user()!.profesionalProfile.workExperience.map((date: WorkExperience) =>
+      endDate===date.endDate ?{...date, 'show': true }: {...date, 'show': false });
        // alert('hy')
-       // console.log(this.jobList);
+       console.log(this.jobList);
   }
 
 }

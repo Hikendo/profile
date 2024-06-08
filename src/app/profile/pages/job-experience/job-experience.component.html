@@ -3,10 +3,11 @@
 <div class="mb-4 border-b border-gray-200 dark:border-gray-700 pl-14">
   <ul class="flex flex-wrap -mb-px text-sm  text-center" >
 
-  @for (year of user()?.profesionalProfile?.workExperience; track $index; let first = $first) {
-      <li class="text-purple-100" >
+
+  @for (year of jobList; track $index; let first = $first) {
+      <li [class]="{'text-purple-500': year.show ,'font-bold': year.show, 'text-gray-600': !year.show}" >
           <button class="inline-block p-4 border-b-2 rounded-t-lg text-lg" routerLinkActive="active"
-          type="button" (click)="showJob(year.endDate)"> {{year.endDate | date:'yyyy'}} </button>
+          type="button" (click)="showJob(year.endDate)"> {{year.endDate| date:'yyyy'}} | </button>
       </li>
     }
 
@@ -16,31 +17,31 @@
 
   <div class="pl-8 pr-14 pb-14">
     <div class="p-5 rounded-lg  backdrop-blur-xl text-justify text-lg">
-  @for (work of user()?.profesionalProfile?.workExperience; track $index) {
-    <table class="min-w-full text-left text-md font-light text-surface">
-      <thead
-      class="border-b border-neutral-200 ">
-      <tr class="border-b border-neutral-200">
-        <td class=" px-6 py-4 text-blue-900	font-light">Empresa: </td> <td class="text-black font-mono font-semibold	">{{work.enterprise}} </td> </tr>
-      <tr class="border-b border-neutral-200">
-        <td class=" px-6 py-4  text-blue-900	font-light">Puesto :</td> <td class="text-black font-mono font-semibold	">{{work.jobTitle}}</td> </tr>
-      <tr class="border-b border-neutral-200">
-        <td class=" px-6 py-4 text-blue-900	font-light">Fecha : </td> <td class="text-black font-mono font-semibold	"> {{work.startDate }} - {{work.endDate }}</td></tr>
-    </thead>
-    <tbody>
-      <tr class="border-b border-neutral-200 text-justify">
-        <td colSpan="2" class=" px-6 py-4 ">
-      @for (activity of work.activities; track $index) {
-        <li>{{activity }}</li>
-      }
-    </td>
-      </tr>
+  @for (work of jobList; track $index) {
+    @if (work.show) {
+      <table class="min-w-full text-left text-md font-light text-surface txt-desv">
+        <thead
+        class="border-b border-neutral-200 ">
+            <tr class="border-b border-neutral-200">
+              <td class=" px-6 py-4 text-blue-900	font-light">Empresa: </td> <td class="text-black font-mono font-semibold	">{{work.enterprise}} </td> </tr>
+            <tr class="border-b border-neutral-200">
+              <td class=" px-6 py-4  text-blue-900	font-light">Puesto :</td> <td class="text-black font-mono font-semibold	">{{work.jobTitle}}</td> </tr>
+            <tr class="border-b border-neutral-200">
+              <td class=" px-6 py-4 text-blue-900	font-light">Fecha : </td> <td class="text-black font-mono font-semibold	"> {{work.startDate }} - {{work.endDate }}</td></tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-neutral-200 text-justify">
+                <td colSpan="2" class=" px-6 py-4 ">
+                @for (activity of work.activities; track $index) {
+                  <li>{{activity }}</li>
+                }
+                </td>
+            </tr>
+      </tbody>
+      </table>
 
-    </tbody>
+    }
 
-
-
-    </table>
 
 
   }
