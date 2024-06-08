@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "~@coreui/chartjs/scss/coreui-chartjs";
 
 @keyframes fadeInFromTop {
   from {
