@@ -17,9 +17,7 @@ export default class SummaryComponent  {
   public user=computed(()=> this.userProfile.user());
 
   public paragraphs: string[]= this.savedParagraph();
-  constructor(
-
-  ){
+  constructor(  ){
     this.getParagraphs();
   }
   savedParagraph(){
@@ -35,6 +33,5 @@ export default class SummaryComponent  {
       localStorage.setItem('profesional',JSON.stringify(this.paragraphs))
 
     }
-      console.log(localStorage.getItem('profesional'));
   }
 }

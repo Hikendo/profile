@@ -13,7 +13,6 @@ import { MenuProfile } from '../interfaces/menu-profile';
 export class UserService {
 
   private readonly baseUrl: string = environment.baseUrl;
-  private url:string = `${this.baseUrl}/profile.json`;
 
   public menuProfile= signal<MenuProfile[]>(this.getInitialValueMenu() || [
     {
@@ -55,6 +54,7 @@ export class UserService {
   public user= computed(() => this._user());
   constructor() {
     this.connectUser().subscribe();
+
    }
 
   private connectUser():Observable<Profile>{
@@ -88,6 +88,8 @@ export class UserService {
     }
     return null;
    }
+
+
 
 
 }

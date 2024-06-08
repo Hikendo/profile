@@ -1,0 +1,10 @@
+
+
+tr {
+  transition: background-color 0.3s; /* Transición suave para el cambio de color */
+}
+
+/* Estilos para el hover */
+tr:hover {
+  background-color: #e6b8e43d; /* Color de fondo al pasar el cursor */
+}
