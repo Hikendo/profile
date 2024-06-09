@@ -10,7 +10,7 @@ export interface ProfesionalProfile {
   education:           Education[];
   technicalSkills:     TechnicalSkill[];
   interpersonalSkills: string[];
-  languages:           Languages[];
+  languages:           Language[];
   courses:             Course[];
 }
 
@@ -38,15 +38,11 @@ export interface Education {
   endDate:        string;
 }
 
-export interface Languages {
-  language: string;
-  level:    Level[];
-}
-
-export interface Level {
-  speechLevel?:  string;
-  writingLevel?: string;
-  readingLevel?: string;
+export interface Language {
+  language:     string;
+  speechLevel:  number;
+  writingLevel: number;
+  readingLevel: number;
 }
 
 export interface TechnicalSkill {

@@ -4,7 +4,7 @@ import { LoadingComponent } from '../../../shared/components/loading/loading.com
 import { CommonModule } from '@angular/common';
 import { ChartjsComponent } from '@coreui/angular-chartjs';
 import { SkillsChartsComponent } from '../../components/skills-charts/skills-charts.component';
-import { Languages, TechnicalSkill, Profile } from '../../../interfaces/profile';
+import { Language, TechnicalSkill, Profile } from '../../../interfaces/profile';
 
 interface MenuSkills{
   id: number;
@@ -63,12 +63,12 @@ export default class SkillsComponent {
 //  public languageLabels= Object.entries(this.user()?.profesionalProfile.languages!);
 
   public languageDataSet= this.user()?.profesionalProfile.languages.map(
-    (language: Languages)=> language.language
+    (language: Language)=> language.language
   );
-  
- 
-  private languageLevels= this.user()?.profesionalProfile.languages.map(
-    (lang: Languages)=> [lang.speechLevel, lang.writingLevel, lang.readingLevel]
+
+
+  public languageLevels= this.user()?.profesionalProfile.languages.map(
+    (lang: Language)=> [lang.speechLevel, lang.writingLevel, lang.readingLevel]
   );
   public technicalChart = {
     labels:this.technicalLabel!,
@@ -85,9 +85,9 @@ export default class SkillsComponent {
   };
 
 
-
+  private typeLevelsLang: string[]=['Speech','Writing','Reading']
   public languagesChart = {
-    labels:this.technicalLabel!,
+    labels:this.typeLevelsLang!,
     datasets: [
       {
         label: this.languageDataSet![0] ,
@@ -95,22 +95,18 @@ export default class SkillsComponent {
         borderColor: 'rgba(220, 220, 220, 1)',
         pointBackgroundColor: 'rgba(220, 220, 220, 1)',
         pointBorderColor: '#fff',
-        data: this.technicalLevel!
+        data: this.languageLevels![0]
       },
       {
         label: this.languageDataSet![1] ,
-        backgroundColor: 'rgb(240, 128, 18, 0.9)',
+        backgroundColor: 'rgb(175, 122, 197 , 0.9)',
         borderColor: 'rgba(220, 220, 220, 1)',
         pointBackgroundColor: 'rgba(220, 220, 220, 1)',
         pointBorderColor: '#fff',
-        data: this.technicalLevel!
+        data: this.languageLevels![1]
       }
     ]
   };
 
-  languge(){
-
-    console.log(this.languageDataSet);
-
-  }
+  
 }

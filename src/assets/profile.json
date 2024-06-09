@@ -139,15 +139,15 @@
     "languages":[
       {
         "language":"Español",
-        "speechLevel":"100",
-        "writingLevel":"100",
-        "readingLevel":"100"
+        "speechLevel":100,
+        "writingLevel":100,
+        "readingLevel":100
       },
       {
         "language":"Ingles",
-        "speechLevel":"60",
-        "writingLevel":"80",
-        "readingLevel":"95"
+        "speechLevel":60,
+        "writingLevel":80,
+        "readingLevel":95
 
       }
     ],
