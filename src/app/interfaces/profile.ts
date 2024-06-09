@@ -6,10 +6,10 @@ export interface ProfesionalProfile {
   name:                string;
   data:                Data;
   abstract:            string;
-  workExperience: WorkExperience[];
+  workExperience:      WorkExperience[];
   education:           Education[];
   technicalSkills:     TechnicalSkill[];
-  interpersonalSkills: interpersonalSkill[];
+  interpersonalSkills: string[];
   languages:           Languages[];
   courses:             Course[];
 }
@@ -18,8 +18,7 @@ export interface Course {
   name:        string;
   institution: string;
   endDate:     string;
-  url?:     string;
-
+  url:         string;
 }
 
 export interface Data {
@@ -28,8 +27,8 @@ export interface Data {
   address:     string;
   linkedin:    string;
   github:      string;
-  url?:         string;
-  imgUrl?:      string;
+  url:         string;
+  imgUrl:      string;
 }
 
 export interface Education {
@@ -37,6 +36,22 @@ export interface Education {
   institution:    string;
   startDate:      string;
   endDate:        string;
+}
+
+export interface Languages {
+  language: string;
+  level:    Level[];
+}
+
+export interface Level {
+  speechLevel?:  string;
+  writingLevel?: string;
+  readingLevel?: string;
+}
+
+export interface TechnicalSkill {
+  skill: string;
+  level: number;
 }
 
 export interface WorkExperience {
@@ -47,17 +62,6 @@ export interface WorkExperience {
   activities: string[];
 }
 
-export interface Languages {
-  language:     string;
-  readingLevel: string;
-  writingLevel: string;
-  speechLevel:  string;
-}
-
-export interface TechnicalSkill {
-  skill:  Technologies;
-  level: number;
-}
 
  export enum Technologies  {
    BPM_IBM_BAW='BPM IBM BAW',

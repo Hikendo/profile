@@ -3,6 +3,8 @@ import { UserService } from '../../../services/user.service';
 import { LoadingComponent } from '../../../shared/components/loading/loading.component';
 import { CommonModule } from '@angular/common';
 import { ChartjsComponent } from '@coreui/angular-chartjs';
+import { SkillsChartsComponent } from '../../components/skills-charts/skills-charts.component';
+import { Languages, TechnicalSkill, Profile } from '../../../interfaces/profile';
 
 interface MenuSkills{
   id: number;
@@ -12,7 +14,7 @@ interface MenuSkills{
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule, LoadingComponent, ChartjsComponent],
+  imports: [CommonModule, LoadingComponent, ChartjsComponent ,SkillsChartsComponent],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css'
 })
@@ -24,59 +26,91 @@ export default class SkillsComponent {
    {typeSkill: 'Habilidades Lingüísticas', show: false, id: 3}];
 
 
+//|| this.getStorageUser()
+  public user=computed(()=> this.userProfile.user() );
 
-  public user=computed(()=> this.userProfile.user());
-
-  public contentSkill: unknown = this.user()!.profesionalProfile.technicalSkills;
-
-  showSkill(id:number){
-
-    this.menuSkill= this.menuSkill.map( m => m.id === id ? { ...m , show : true } : { ...m , show : false });
-
-    if(id!= 1 && this.user()){
-      this.contentSkill= this.user()!.profesionalProfile.technicalSkills;
+    constructor(){
+      this.saveStorageUser();
     }
-    if(id!= 2 && this.user()){
-      this.contentSkill= this.user()!.profesionalProfile.interpersonalSkills;
+
+  getStorageUser(){
+    if (localStorage.getItem('user')) {
+      return JSON.parse(localStorage.getItem('user')!);
     }
-    if(id!= 3 && this.user()){
-      this.contentSkill= this.user()!.profesionalProfile.languages;
+    return [];
+  }
+  saveStorageUser(){
+    if (this.user()) {
+      localStorage.setItem('user',JSON.stringify(this.user()));
     }
-    //alert(id);
   }
 
+  showSkill(id:number){
+//    console.log('hey daataset ' + this.technicalLevel);
+    this.menuSkill= this.menuSkill.map( m => m.id === id ? { ...m , show : true } : { ...m , show : false });
 
-  data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  }
+
+  public technicalLabel= this.user()?.profesionalProfile.technicalSkills.map(
+    (skill: TechnicalSkill) => skill.skill
+  );
+  public technicalLevel= this.user()?.profesionalProfile.technicalSkills.map(
+    (skill : TechnicalSkill )=> skill.level
+  );
+
+
+
+//  public languageLabels= Object.entries(this.user()?.profesionalProfile.languages!);
+
+  public languageDataSet= this.user()?.profesionalProfile.languages.map(
+    (language: Languages)=> language.language
+  );
+  
+ 
+  private languageLevels= this.user()?.profesionalProfile.languages.map(
+    (lang: Languages)=> [lang.speechLevel, lang.writingLevel, lang.readingLevel]
+  );
+  public technicalChart = {
+    labels:this.technicalLabel!,
     datasets: [
       {
-        label: 'My First dataset',
-        backgroundColor: 'rgba(220, 220, 220, 0.2)',
+        label: 'Level' ,
+        backgroundColor: 'rgb(240, 128, 128, 0.9)',
         borderColor: 'rgba(220, 220, 220, 1)',
         pointBackgroundColor: 'rgba(220, 220, 220, 1)',
         pointBorderColor: '#fff',
-        data: [40, 20, 12, 39, 10, 80, 40]
-      },
-      {
-        label: 'My Second dataset',
-        backgroundColor: 'rgba(151, 187, 205, 0.2)',
-        borderColor: 'rgba(151, 187, 205, 1)',
-        pointBackgroundColor: 'rgba(151, 187, 205, 1)',
-        pointBorderColor: '#fff',
-        data: [50, 12, 28, 29, 7, 25, 60]
+        data: this.technicalLevel!
       }
     ]
   };
 
-  handleChartRef($chartRef: any) {
-    if ($chartRef) {
-      console.log('handleChartRef', $chartRef);
-      this.data.labels.push('August');
-      this.data.datasets[0].data.push(60);
-      this.data.datasets[1].data.push(20);
-      setTimeout(() => {
-        $chartRef?.update();
-      }, 3000);
-    }
+
+
+  public languagesChart = {
+    labels:this.technicalLabel!,
+    datasets: [
+      {
+        label: this.languageDataSet![0] ,
+        backgroundColor: 'rgb(240, 128, 128, 0.9)',
+        borderColor: 'rgba(220, 220, 220, 1)',
+        pointBackgroundColor: 'rgba(220, 220, 220, 1)',
+        pointBorderColor: '#fff',
+        data: this.technicalLevel!
+      },
+      {
+        label: this.languageDataSet![1] ,
+        backgroundColor: 'rgb(240, 128, 18, 0.9)',
+        borderColor: 'rgba(220, 220, 220, 1)',
+        pointBackgroundColor: 'rgba(220, 220, 220, 1)',
+        pointBorderColor: '#fff',
+        data: this.technicalLevel!
+      }
+    ]
+  };
+
+  languge(){
+
+    console.log(this.languageDataSet);
+
   }
 }

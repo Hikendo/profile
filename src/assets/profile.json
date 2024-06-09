@@ -139,15 +139,16 @@
     "languages":[
       {
         "language":"Español",
-        "speechLevel":"Nativo",
-        "writingLevel":"Nativo",
-        "readingLevel":"Nativo"
+        "speechLevel":"100",
+        "writingLevel":"100",
+        "readingLevel":"100"
       },
       {
         "language":"Ingles",
-        "speechLevel":"Básico",
-        "writingLevel":"Avanzado",
-        "readingLevel":"Avanzado"
+        "speechLevel":"60",
+        "writingLevel":"80",
+        "readingLevel":"95"
+
       }
     ],
     "courses":[

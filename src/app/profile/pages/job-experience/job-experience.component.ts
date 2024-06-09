@@ -43,9 +43,6 @@ export default class JobExperienceComponent implements OnInit{
       this.jobList = this.user()!.profesionalProfile.workExperience.map((date: WorkExperience, index) =>
         index > 0 ? {...date, 'show': false }: {...date,  'show': true });
       localStorage.setItem('dateShowTab',JSON.stringify(this.jobList));
-
-
-
     }
   }
 

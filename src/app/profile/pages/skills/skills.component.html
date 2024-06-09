@@ -18,20 +18,19 @@
   @for (skill of menuSkill; track $index;) {
 
       <div *ngIf="skill.show && skill.id ===1">
-        @for (item of user()?.profesionalProfile?.technicalSkills; track $index) {
-          <p> {{item.skill}} </p>
-        }
+        <c-chart [data]="technicalChart" type="bar" class="w-2/3"/>
+
 
       </div>
       <div *ngIf="skill.show && skill.id ===2">
-        @for (item of user()?.profesionalProfile?.interpersonalSkills; track $index) {
-          <p> {{item}} </p>
-        }
+        <app-skills-charts></app-skills-charts>
+
       </div>
       <div *ngIf="skill.show && skill.id ===3">
-        @for (item of user()?.profesionalProfile?.languages; track $index) {
-          <p> {{item.language}} </p>
-        }
+        <button (click)="languge()">language</button>
+        <c-chart [data]="languagesChart" type="bar" class="w-2/3"/>
+
+
       </div>
     }
 }@placeholder {
@@ -39,4 +38,4 @@
 
 }
 
-<c-chart [data]="data" type="line" (chartRef)="handleChartRef($event)" />
+
