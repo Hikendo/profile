@@ -124,17 +124,17 @@
       }
     ],
     "interpersonalSkills":[
-      "Comunicación efectiva",
-      "Trabajo en equipo",
-      "Liderazgo",
-      "Resolución de conflictos",
-      "Empatía",
-      "Negociación",
-      "Adaptabilidad",
-      "Creatividad",
-      "Proactivo",
-      "Comprometido con los objetivos",
-      "Analiza situaciones complejas para la toma de decisiones"
+     {"softSkill": "Comunicación efectiva", "level": 90},
+     {"softSkill": "Trabajo en equipo", "level": 95},
+     {"softSkill": "Liderazgo", "level": 70},
+     {"softSkill": "Resolución de conflictos", "level": 80},
+     {"softSkill": "Empatía", "level": 100},
+     {"softSkill": "Negociación", "level": 85},
+     {"softSkill": "Adaptabilidad", "level": 70},
+     {"softSkill": "Creatividad", "level": 95},
+     {"softSkill": "Proactivo", "level": 95},
+     {"softSkill": "Comprometido con los objetivos", "level": 99},
+     {"softSkill": "Analiza situaciones complejas para la toma de decisiones", "level": 90}
     ],
     "languages":[
       {

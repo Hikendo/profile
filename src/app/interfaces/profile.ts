@@ -9,7 +9,7 @@ export interface ProfesionalProfile {
   workExperience:      WorkExperience[];
   education:           Education[];
   technicalSkills:     TechnicalSkill[];
-  interpersonalSkills: string[];
+  interpersonalSkills: InterpersonalSkill[];
   languages:           Language[];
   courses:             Course[];
 }
@@ -38,6 +38,11 @@ export interface Education {
   endDate:        string;
 }
 
+export interface InterpersonalSkill {
+  softSkill: string;
+  level:     number;
+}
+
 export interface Language {
   language:     string;
   speechLevel:  number;
@@ -57,6 +62,7 @@ export interface WorkExperience {
   endDate:    string;
   activities: string[];
 }
+
 
 
  export enum Technologies  {

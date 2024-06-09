@@ -1,3 +1,14 @@
-<p>skills-charts works!</p>
-<!--(chartRef)="handleChartRef($event)"-->
-<canvas id="skillsCanvas" width="600" height="400"></canvas>
+
+<div class="max-w-full w-11/12 m-5">
+  <div id="chart">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [dataLabels]="chartOptions.dataLabels"
+      [plotOptions]="chartOptions.plotOptions"
+      [title]="chartOptions.title"
+      [legend]="chartOptions.legend"
+    ></apx-chart>
+  </div>
+
+</div>

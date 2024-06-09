@@ -4,7 +4,7 @@ import { LoadingComponent } from '../../../shared/components/loading/loading.com
 import { CommonModule } from '@angular/common';
 import { ChartjsComponent } from '@coreui/angular-chartjs';
 import { SkillsChartsComponent } from '../../components/skills-charts/skills-charts.component';
-import { Language, TechnicalSkill, Profile } from '../../../interfaces/profile';
+import { Language, TechnicalSkill, Profile, interpersonalSkill } from '../../../interfaces/profile';
 
 interface MenuSkills{
   id: number;
@@ -26,8 +26,8 @@ export default class SkillsComponent {
    {typeSkill: 'Habilidades Lingüísticas', show: false, id: 3}];
 
 
-//|| this.getStorageUser()
-  public user=computed(()=> this.userProfile.user() );
+
+  public user=computed(()=> this.userProfile.user() || this.getStorageUser());
 
     constructor(){
       this.saveStorageUser();
@@ -48,7 +48,7 @@ export default class SkillsComponent {
   showSkill(id:number){
 //    console.log('hey daataset ' + this.technicalLevel);
     this.menuSkill= this.menuSkill.map( m => m.id === id ? { ...m , show : true } : { ...m , show : false });
-
+    console.log(this.softSkills)
   }
 
   public technicalLabel= this.user()?.profesionalProfile.technicalSkills.map(
@@ -59,7 +59,7 @@ export default class SkillsComponent {
   );
 
 
-
+  public softSkills=this.user()?.profesionalProfile.interpersonalSkills;
 //  public languageLabels= Object.entries(this.user()?.profesionalProfile.languages!);
 
   public languageDataSet= this.user()?.profesionalProfile.languages.map(
@@ -108,5 +108,5 @@ export default class SkillsComponent {
     ]
   };
 
-  
+
 }
