@@ -33,6 +33,8 @@ export default class SkillsComponent {
       this.saveStorageUser();
     }
 
+  public charTypeOptions=['bar', 'line','radar','doughnut', 'polarArea', '']
+
   getStorageUser(){
     if (localStorage.getItem('user')) {
       return JSON.parse(localStorage.getItem('user')!);
@@ -46,9 +48,7 @@ export default class SkillsComponent {
   }
 
   showSkill(id:number){
-//    console.log('hey daataset ' + this.technicalLevel);
     this.menuSkill= this.menuSkill.map( m => m.id === id ? { ...m , show : true } : { ...m , show : false });
-    console.log(this.softSkills)
   }
 
   public technicalLabel= this.user()?.profesionalProfile.technicalSkills.map(
@@ -59,7 +59,6 @@ export default class SkillsComponent {
   );
 
 
-  public softSkills=this.user()?.profesionalProfile.interpersonalSkills;
 //  public languageLabels= Object.entries(this.user()?.profesionalProfile.languages!);
 
   public languageDataSet= this.user()?.profesionalProfile.languages.map(

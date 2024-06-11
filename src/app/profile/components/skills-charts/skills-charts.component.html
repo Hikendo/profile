@@ -1,13 +1,12 @@
 
-<div class="max-w-full w-11/12 m-5">
+<div class="max-w-full w-11/12">
   <div id="chart">
     <apx-chart
-      [series]="chartOptions.series"
-      [chart]="chartOptions.chart"
-      [dataLabels]="chartOptions.dataLabels"
-      [plotOptions]="chartOptions.plotOptions"
-      [title]="chartOptions.title"
-      [legend]="chartOptions.legend"
+      [series]="chartOptions!.series!"
+      [chart]="chartOptions!.chart!"
+      [dataLabels]="chartOptions!.dataLabels!"
+      [plotOptions]="chartOptions!.plotOptions!"
+      [title]="chartOptions!.title!"
     ></apx-chart>
   </div>
 

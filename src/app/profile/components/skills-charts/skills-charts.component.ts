@@ -1,170 +1,70 @@
-import { Component, Input, OnInit, ViewChild} from '@angular/core';
+import { Component, Input, OnInit, ViewChild, inject} from '@angular/core';
 import { NgApexchartsModule, ApexAxisChartSeries,
   ApexTitleSubtitle,
+  ApexNonAxisChartSeries,
   ApexDataLabels,
   ApexChart,
   ApexPlotOptions,
   ApexLegend,
   ChartComponent} from "ng-apexcharts";
+import { InterpersonalSkill } from '../../../interfaces/profile';
+import { CommonModule } from '@angular/common';
+import { UserService } from '../../../services/user.service';
 
 export type ChartOptions = {
-  series: ApexAxisChartSeries;
-  chart: ApexChart;
-  dataLabels: ApexDataLabels;
-  title: ApexTitleSubtitle;
-  plotOptions: ApexPlotOptions;
-  legend: ApexLegend;
+  series?: ApexAxisChartSeries | ApexNonAxisChartSeries;
+  chart?: ApexChart;
+  dataLabels?: ApexDataLabels;
+  title?: ApexTitleSubtitle;
+  plotOptions?: ApexPlotOptions;
+  legend?: ApexLegend;
 };
 @Component({
   selector: 'app-skills-charts',
   standalone: true,
-  imports: [NgApexchartsModule],
+  imports: [NgApexchartsModule, CommonModule],
   templateUrl: './skills-charts.component.html',
   styleUrl: './skills-charts.component.css'
 })
 export class SkillsChartsComponent{
 
-  @Input() softSkills: string[]=[];
+  public user = inject(UserService);
+public softSkills = this.user.user()?.profesionalProfile.interpersonalSkills;
+ // public skillCharts= this.softSkills.map( (skill:InterpersonalSkill) => ({x: skill.softSkill, y: skill.level}));
   @ViewChild("chart") chart?: ChartComponent;
-  public chartOptions?: Partial<ChartOptions> = {
-    series: [
-      {
-        data: [
-          {
-            x: "New Delhi",
-            y: 218
-          },
-          {
-            x: "Kolkata",
-            y: 149
-          },
-          {
-            x: "Mumbai",
-            y: 184
-          },
-          {
-            x: "Ahmedabad",
-            y: 55
-          },
-          {
-            x: "Bangaluru",
-            y: 84
-          },
-          {
-            x: "Pune",
-            y: 31
-          },
-          {
-            x: "Chennai",
-            y: 70
-          },
-          {
-            x: "Jaipur",
-            y: 30
-          },
-          {
-            x: "Surat",
-            y: 44
-          },
-          {
-            x: "Hyderabad",
-            y: 68
-          },
-          {
-            x: "Lucknow",
-            y: 28
-          },
-          {
-            x: "Indore",
-            y: 19
-          },
-          {
-            x: "Kanpur",
-            y: 29
-          }
-        ]
-      }
-    ],
-
-    chart: {
-      height: 350,
-      type: "treemap"
-    },
-    title: {
-      text: "Basic Treemap"
-    }
-  };
+  public chartOptions?: Partial<ChartOptions>;
 
   constructor() {
-    this.chartOptions = {
+    this.chartOptions= this.buildChart();
+
+  }
+  buildChart(): Partial<ChartOptions>{
+    const skillCharts= this.softSkills!.map( (skill:InterpersonalSkill) => ({x: skill.softSkill, y: skill.level}));
+
+    return {
       series: [
         {
-          data: [
-            {
-              x: "New Delhi",
-              y: 218
-            },
-            {
-              x: "Kolkata",
-              y: 149
-            },
-            {
-              x: "Mumbai",
-              y: 184
-            },
-            {
-              x: "Ahmedabad",
-              y: 55
-            },
-            {
-              x: "Bangaluru",
-              y: 84
-            },
-            {
-              x: "Pune",
-              y: 31
-            },
-            {
-              x: "Chennai",
-              y: 70
-            },
-            {
-              x: "Jaipur",
-              y: 30
-            },
-            {
-              x: "Surat",
-              y: 44
-            },
-            {
-              x: "Hyderabad",
-              y: 68
-            },
-            {
-              x: "Lucknow",
-              y: 28
-            },
-            {
-              x: "Indore",
-              y: 19
-            },
-            {
-              x: "Kanpur",
-              y: 29
-            }
-          ]
+          data: skillCharts
         }
       ],
-
+      legend: {
+        show: false
+      },
       chart: {
-        height: 350,
+        height: 600,
         type: "treemap"
       },
       title: {
-        text: "Basic Treemap"
+        text: "Interpersonal Skills"
+      },
+      plotOptions: {
+        treemap: {
+          distributed: true,
+          enableShades: false
+        }
       }
+
     };
   }
-
 
 }

@@ -17,20 +17,25 @@
 @defer (on timer(1s)) {
   @for (skill of menuSkill; track $index;) {
 
-      <div *ngIf="skill.show && skill.id ===1">
+      <div *ngIf="skill.show && skill.id ===1"  [class]="{'m-10': skill.show && skill.id ===1}">
+        <form>
+          <label>Tipo de Gráfica </label>
+
+          <select name="typeChart">
+            <option>--Bar--</option>
+          </select>
+        </form>
         <c-chart [data]="technicalChart" type="bar" class="w-2/3"/>
-
-
       </div>
-      <div *ngIf="skill.show && skill.id ===2">
-        <app-skills-charts [softSkills]="softSkills" ></app-skills-charts>
 
+      <div *ngIf="skill.show && skill.id ===2"  [class]="{'m-10': skill.show && skill.id ===2}" >
+        <app-skills-charts ></app-skills-charts>
       </div>
-      <div *ngIf="skill.show && skill.id ===3">
+
+      <div *ngIf="skill.show && skill.id ===3"  [class]="{'m-10': skill.show && skill.id ===3}">
         <c-chart [data]="languagesChart" type="bar" class="w-2/3"/>
-
-
       </div>
+
     }
 }@placeholder {
   <app-loading></app-loading>
