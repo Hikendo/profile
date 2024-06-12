@@ -1,1 +1,0 @@
-import{$ as o,Db as s,Hb as i,pb as a,qb as r}from"./chunk-P7VCVAHH.js";var d=(()=>{let e=class e{};e.\u0275fac=function(n){return new(n||e)},e.\u0275cmp=o({type:e,selectors:[["app-glossary"]],standalone:!0,features:[i],decls:2,vars:0,template:function(n,p){n&1&&(a(0,"p"),s(1,"glossary works!"),r())}});let t=e;return t})();export{d as default};

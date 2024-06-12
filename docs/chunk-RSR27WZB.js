@@ -1,1 +1,0 @@
-import{$ as o,Db as r,Hb as s,pb as a,qb as i}from"./chunk-P7VCVAHH.js";var m=(()=>{let e=class e{};e.\u0275fac=function(n){return new(n||e)},e.\u0275cmp=o({type:e,selectors:[["app-diplomas"]],standalone:!0,features:[s],decls:2,vars:0,template:function(n,d){n&1&&(a(0,"p"),r(1,"diplomas works!"),i())}});let t=e;return t})();export{m as default};
