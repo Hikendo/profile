@@ -1,10 +1,13 @@
-import { Component, computed, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges, computed, inject, signal } from '@angular/core';
 import { UserService } from '../../../services/user.service';
 import { LoadingComponent } from '../../../shared/components/loading/loading.component';
 import { CommonModule } from '@angular/common';
 import { ChartjsComponent } from '@coreui/angular-chartjs';
 import { SkillsChartsComponent } from '../../components/skills-charts/skills-charts.component';
-import { Language, TechnicalSkill, Profile, interpersonalSkill } from '../../../interfaces/profile';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Language, TechnicalSkill } from '../../../interfaces/profile';
+import { tap } from 'rxjs';
+import { ChartType } from 'chart.js';
 
 interface MenuSkills{
   id: number;
@@ -14,11 +17,11 @@ interface MenuSkills{
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule, LoadingComponent, ChartjsComponent ,SkillsChartsComponent],
+  imports: [CommonModule, LoadingComponent, ChartjsComponent ,SkillsChartsComponent, ReactiveFormsModule],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css'
 })
-export default class SkillsComponent {
+export default class SkillsComponent implements OnInit {
   private userProfile =inject(UserService);
 
   public menuSkill:MenuSkills[] =[{typeSkill: 'Habilidades Técnicas',
@@ -33,7 +36,36 @@ export default class SkillsComponent {
       this.saveStorageUser();
     }
 
-  public charTypeOptions=['bar', 'line','radar','doughnut', 'polarArea', '']
+  public charTypeOptions=['bar', 'line','radar','doughnut', 'polarArea']
+
+  private fb= inject(FormBuilder);
+
+
+  public mySelectChar: FormGroup= this.fb.group({
+    char:['bar',[Validators.required]]
+  });
+  public redraw = signal(false) ;
+
+ public chartSelected: ChartType  = 'bar';
+  ngOnInit(): void {
+    this.onChangeChartType();
+  }
+
+
+
+  onChangeChartType(){
+    this.mySelectChar.get('char')?.valueChanges.pipe(
+      tap(() => {this.chartSelected=this.mySelectChar.get('char')?.value;
+        this.redraw.update(() => true);
+
+        setTimeout(() => this.redraw.update(() => false), 0);
+
+            this.menuSkill= this.menuSkill.map( m =>{ return { ...m , show : !m.show }});
+            this.menuSkill= this.menuSkill.map( m =>{ return { ...m , show : !m.show }});
+
+      }),
+    ).subscribe();
+  }
 
   getStorageUser(){
     if (localStorage.getItem('user')) {
@@ -74,15 +106,32 @@ export default class SkillsComponent {
     datasets: [
       {
         label: 'Level' ,
-        backgroundColor: 'rgb(240, 128, 128, 0.9)',
-        borderColor: 'rgba(220, 220, 220, 1)',
-        pointBackgroundColor: 'rgba(220, 220, 220, 1)',
+        backgroundColor: 'rgb(240, 128, 128, 0.4)',
+        borderColor: 'rgba(20, 20, 20, 1)',
+        pointBackgroundColor: 'rgba(20, 220, 220, 1)',
         pointBorderColor: '#fff',
         data: this.technicalLevel!
       }
-    ]
+    ],
+
   };
 
+  public options = {
+    scales: {
+      y: {
+        beginAtZero: true
+      },
+      x: {
+        beginAtZero: true
+      },
+      r: {
+
+          beginAtZero: true,
+          min: 0 // Asegura que la escala comience en 0
+
+      }
+    }
+  };
 
   private typeLevelsLang: string[]=['Speech','Writing','Reading']
   public languagesChart = {
@@ -106,6 +155,5 @@ export default class SkillsComponent {
       }
     ]
   };
-
 
 }

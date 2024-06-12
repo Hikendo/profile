@@ -31,7 +31,6 @@ export class SkillsChartsComponent{
   public user = inject(UserService);
 public softSkills = this.user.user()?.profesionalProfile.interpersonalSkills;
  // public skillCharts= this.softSkills.map( (skill:InterpersonalSkill) => ({x: skill.softSkill, y: skill.level}));
-  @ViewChild("chart") chart?: ChartComponent;
   public chartOptions?: Partial<ChartOptions>;
 
   constructor() {

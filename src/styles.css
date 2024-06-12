@@ -1,3 +1,7 @@
+
+@import "../node_modules/@coreui/chartjs/scss/coreui-chartjs.scss";
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

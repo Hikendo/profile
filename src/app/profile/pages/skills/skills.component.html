@@ -18,14 +18,21 @@
   @for (skill of menuSkill; track $index;) {
 
       <div *ngIf="skill.show && skill.id ===1"  [class]="{'m-10': skill.show && skill.id ===1}">
-        <form>
+        <form [formGroup]="mySelectChar" >
           <label>Tipo de Gráfica </label>
 
-          <select name="typeChart">
-            <option>--Bar--</option>
+          <select name="typeChart" formControlName="char">
+            @for(charType of charTypeOptions; track $index;){
+              <option  [value]="charType"> {{charType | titlecase}} </option>
+            }
           </select>
         </form>
-        <c-chart [data]="technicalChart" type="bar" class="w-2/3"/>
+        <br>
+        <hr>
+        @if (!redraw()) {
+          <c-chart [data]="technicalChart" [options]="options" [type]="chartSelected" [redraw]="redraw()" class="w-2/3"/>
+        }
+
       </div>
 
       <div *ngIf="skill.show && skill.id ===2"  [class]="{'m-10': skill.show && skill.id ===2}" >
