@@ -1,17 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ApexAxisChartSeries, ApexChart, ApexDataLabels, ApexFill, ApexLegend, ApexNonAxisChartSeries, ApexPlotOptions, ApexTitleSubtitle, ApexXAxis, ApexYAxis } from 'ng-apexcharts';
-import { tap } from 'rxjs';
+import {  ApexChart } from 'ng-apexcharts';
+import { ChartOptions } from '../interfaces/chart-options';
 
-export type ChartOptions = {
-  series?: ApexAxisChartSeries | ApexNonAxisChartSeries;
-  chart?: ApexChart;
-  xaxis?: ApexXAxis;
-  yaxis?: ApexYAxis;
-  dataLabels?: ApexDataLabels;
-  title?: ApexTitleSubtitle;
-  plotOptions?: ApexPlotOptions;
-  legend?: ApexLegend;
-};
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +16,8 @@ export class ChartApexService {
   private typeLevelsLang: string[]=["Speech","Writing","Reading"]
 
   buildChart(chartSelected: ApexChart, skillCharts:any, type: string, title:string): Partial<ChartOptions>{
+    console.log({skillCharts});
+    console.log([this.typeLevelsLang]);
     if(type==="combo"){
             return {
               series: skillCharts,
@@ -33,21 +25,20 @@ export class ChartApexService {
               title: {
                 text: title
               },
-              xaxis: {
-                categories: this.typeLevelsLang,
-              },
-              legend: {
+
+              stroke: {
                 show: true,
-                position: 'top'
+                width: 1,
+                colors: ["#fff"]
               },
-
-
-              yaxis: {
-                min: 0 // Esto asegura que la escala del eje Y comience en 0
+              xaxis: {
+                categories: this.typeLevelsLang
+              },
+              yaxis:{
+                min:0
               }
-
-            };
         }
+      }
 
         return {
           series: [

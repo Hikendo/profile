@@ -32,8 +32,8 @@
         </div>
         @if (type === "combo"){
           <div class="form-group">
-            <label for="chartColor">Color Data 2</label>
-            <input type="color" class="form-control-color" id="chartColor">
+            <label for="chartColor2">Color Data 2</label>
+            <input type="color" class="form-control-color" id="chartColor2">
           </div>
         }
       </form>
@@ -48,6 +48,8 @@
       [chart]="chartSoftSkill!.chart!"
       [dataLabels]="chartSoftSkill!.dataLabels!"
       [plotOptions]="chartSoftSkill!.plotOptions!"
+      [xaxis]="chartSoftSkill!.xaxis!"
+      [yaxis]="chartSoftSkill!.yaxis!"
       [title]="chartSoftSkill!.title!"
     ></apx-chart>
   </div>

@@ -1,27 +1,14 @@
-import { Component, ElementRef, HostListener, Input, ViewChild, inject, signal} from '@angular/core';
-import { NgApexchartsModule, ApexAxisChartSeries,
-  ApexTitleSubtitle,
-  ApexNonAxisChartSeries,
-  ApexDataLabels,
-  ApexChart,
-  ApexPlotOptions,
-  ApexLegend,
-  ChartComponent} from "ng-apexcharts";
+import { Component, ElementRef, HostListener, Input, OnDestroy, OnInit, ViewChild, inject, signal} from '@angular/core';
+import { NgApexchartsModule, ApexChart, ChartComponent} from "ng-apexcharts";
 import { InterpersonalSkill, Language, TechnicalSkill } from '../../../interfaces/profile';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../../services/user.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { tap } from 'rxjs';
 import { ChartApexService } from '../../../services/chart-apex.service';
+import { ChartOptions } from '../../../interfaces/chart-options';
 
-export type ChartOptions = {
-  series?: ApexAxisChartSeries | ApexNonAxisChartSeries;
-  chart?: ApexChart;
-  dataLabels?: ApexDataLabels;
-  title?: ApexTitleSubtitle;
-  plotOptions?: ApexPlotOptions;
-  legend?: ApexLegend;
-};
+
 @Component({
   selector: 'app-skills-charts',
   standalone: true,
@@ -29,15 +16,15 @@ export type ChartOptions = {
   templateUrl: './skills-charts.component.html',
   styleUrl: './skills-charts.component.css'
 })
-export class SkillsChartsComponent{
+export class SkillsChartsComponent implements OnInit,OnDestroy{
 
-  @Input() skillType?: string;
-  @Input() type?: string;
-  @Input() title?: string;
+  @Input() public skillType?: string;
+  @Input() public type?: string;
+  @Input() public title?: string;
 
   private user = inject(UserService);
   private chartService = inject(ChartApexService);
-  public skills = this.user.user()?.profesionalProfile;
+  private skills = this.user.user()?.profesionalProfile;
  // public skillCharts= this.skills.map( (skill:InterpersonalSkill) => ({x: skill.softSkill, y: skill.level}));
   public chartSoftSkill?: Partial<ChartOptions>;
   public chartTypes= this.chartService.chartTypes;
@@ -51,6 +38,7 @@ export class SkillsChartsComponent{
   public showToolsButtonLabel: string= 'Show Tools';
 
   constructor(private _eref: ElementRef) {}
+
 
   @HostListener('document:click', ['$event'])
   public onDocumentClick(event: MouseEvent): void {
@@ -96,6 +84,8 @@ export class SkillsChartsComponent{
     this.onChangeSoftSkillChartType();
   }
 
+  ngOnDestroy(): void {
+  }
   onChangeSoftSkillChartType(){
     this.softSkillChar.get('softSkill')?.valueChanges.pipe(
       tap(() => {
