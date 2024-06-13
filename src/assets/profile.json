@@ -139,9 +139,9 @@
     "languages":[
       {
         "language":"Español",
-        "speechLevel":100,
-        "writingLevel":100,
-        "readingLevel":100
+        "speechLevel":98,
+        "writingLevel":95,
+        "readingLevel":99
       },
       {
         "language":"Ingles",

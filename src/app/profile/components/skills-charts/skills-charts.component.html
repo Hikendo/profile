@@ -1,13 +1,57 @@
 
 <div class="max-w-full w-11/12">
-  <div id="chart">
+  <div >
+    <button (click)="toggleFilterForm($event)" class="bg-transparent hover:bg-blue-500 text-blue-700
+     font-semibold hover:text-white py-2 px-4 border border-blue-500
+      hover:border-transparent rounded">{{showToolsButtonLabel}} </button>
+@if (isFilterVisible) {
+      <form [formGroup]="softSkillChar" class="soft-skill-form" [ngStyle]="{'top.px': posY, 'left.px': posX}">
+        <div class="float-right">
+          <button (click)="toggleFilterForm($event)" class="bg-red-500 hover:bg-red-700 text-white font-bold rounded">
+            &nbsp; X &nbsp;
+          </button>
+        </div>        <p class="bg-white">{{title}} </p>
+        <div class="form-group">
+          <label for="typeChart">Tipo</label>
+          <select name="typeChart" formControlName="softSkill" class="form-control">
+            @for(charType of chartTypes; track $index;){
+              @if (type === "combo" && charType === "treemap") {
+              }@else {
+                <option  [value]="charType"> {{charType | titlecase}} </option>
+
+              }
+            }          </select>
+        </div>
+        <div class="form-group">
+          <label for="chartHeight">Altura</label>
+          <input type="range" class="form-control-range" id="chartHeight" min="400" max="600" step="10">
+        </div>
+        <div class="form-group">
+          <label for="chartColor">Color</label>
+          <input type="color" class="form-control-color" id="chartColor">
+        </div>
+        @if (type === "combo"){
+          <div class="form-group">
+            <label for="chartColor">Color Data 2</label>
+            <input type="color" class="form-control-color" id="chartColor">
+          </div>
+        }
+      </form>
+    }
+</div>
+  <br>
+  <hr>
+  @if (!redrawSoftSkill()) {
+    <div id="chart">
     <apx-chart
-      [series]="chartOptions!.series!"
-      [chart]="chartOptions!.chart!"
-      [dataLabels]="chartOptions!.dataLabels!"
-      [plotOptions]="chartOptions!.plotOptions!"
-      [title]="chartOptions!.title!"
+      [series]="chartSoftSkill!.series!"
+      [chart]="chartSoftSkill!.chart!"
+      [dataLabels]="chartSoftSkill!.dataLabels!"
+      [plotOptions]="chartSoftSkill!.plotOptions!"
+      [title]="chartSoftSkill!.title!"
     ></apx-chart>
   </div>
+  }
+
 
 </div>

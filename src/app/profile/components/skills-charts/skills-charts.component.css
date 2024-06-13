@@ -1,0 +1,33 @@
+.soft-skill-form {
+  position: fixed;
+  width: 200px;
+  background-color: rgba(246, 235, 252, 0.821);
+  border: 3px solid #ddd;
+  border-radius: 5%;
+  padding: 5px;
+  z-index: 1000;
+}
+
+
+
+.form-control {
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+.form-control-range {
+  width: 100%;
+}
+
+.form-control-color {
+  width: 100%;
+  border: none;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.1rem;
+}

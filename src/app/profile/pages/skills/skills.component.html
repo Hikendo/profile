@@ -1,49 +1,24 @@
 
 <h4 class="pt-4 pl-5 text-center">Habilidades</h4>
+<br>
+<hr>
 
-<div class="mb-4 border-b border-gray-200 dark:border-gray-700 pl-14">
-  <ul class="flex flex-wrap -mb-px text-sm  text-center" >
-
-
-  @for (skill of menuSkill; track $index;) {
-      <li [class]="{'text-purple-500': skill.show ,'font-bold': skill.show, 'text-gray-600': !skill.show}" >
-          <button class="inline-block p-4 border-b-2 rounded-t-lg text-lg"
-          type="button" (click)="showSkill(skill.id)"> {{skill.typeSkill}} | </button>
-      </li>
-    }
-
-  </ul>
-</div>
 @defer (on timer(1s)) {
-  @for (skill of menuSkill; track $index;) {
+    <div class="grid grid-cols-2 gap-4 bg-white">
+        <div class=" p-5">
+          <app-skills-charts skillType="skillLanguaje" type="combo" title="Habilidades del Lenguaje"></app-skills-charts>
 
-      <div *ngIf="skill.show && skill.id ===1"  [class]="{'m-10': skill.show && skill.id ===1}">
-        <form [formGroup]="mySelectChar" >
-          <label>Tipo de Gráfica </label>
+        </div>
+        <div class=" p-5">
+          <app-skills-charts skillType="skillTechnical" type="single" title="Habilidades Técnicas"></app-skills-charts>
+        </div>
+        <div class="col-span-2 p-5">
+          <app-skills-charts skillType="skillSoft" type="single" title="Habilidades Interpersonales"></app-skills-charts>
 
-          <select name="typeChart" formControlName="char">
-            @for(charType of charTypeOptions; track $index;){
-              <option  [value]="charType"> {{charType | titlecase}} </option>
-            }
-          </select>
-        </form>
-        <br>
-        <hr>
-        @if (!redraw()) {
-          <c-chart [data]="technicalChart" [options]="options" [type]="chartSelected" [redraw]="redraw()" class="w-2/3"/>
-        }
+        </div>
 
-      </div>
+    </div>
 
-      <div *ngIf="skill.show && skill.id ===2"  [class]="{'m-10': skill.show && skill.id ===2}" >
-        <app-skills-charts ></app-skills-charts>
-      </div>
-
-      <div *ngIf="skill.show && skill.id ===3"  [class]="{'m-10': skill.show && skill.id ===3}">
-        <c-chart [data]="languagesChart" type="bar" class="w-2/3"/>
-      </div>
-
-    }
 }@placeholder {
   <app-loading></app-loading>
 
