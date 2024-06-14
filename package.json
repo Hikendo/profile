@@ -8,9 +8,13 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build-href": "ng build --base-href ./",
-    "git-build": "npm run build-href && npm run delete:docs && npm run copy:dist",
+    "git-build": "npm run build-href && npm run delete:docs && npm run copy:dist && npm run copy:assets && npm run copy:diplomas",
     "delete:docs": "del docs",
-    "copy:dist": "copyfiles -a dist/curriculun-vitae/browser/* ./docs -f"
+    "copy:dist": "copyfiles -a ./dist/curriculun-vitae/browser/* ./docs -f",
+    "copy:assets": "copyfiles -a ./dist/curriculun-vitae/browser/assets/* ./docs/assets -f",
+    "copy:diplomas": "copyfiles -a ./dist/curriculun-vitae/browser/assets/diplomas/* ./docs/assets/diplomas -f"
+
+
   },
   "private": true,
   "dependencies": {
