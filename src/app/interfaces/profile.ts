@@ -17,9 +17,10 @@ export interface ProfesionalProfile {
 export interface Course {
   name:        string;
   institution: string;
-  endDate:     string;
-  url:         string;
+  file:        string;
 }
+
+
 
 export interface Data {
   email:       string;
