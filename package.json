@@ -10,7 +10,7 @@
     "build-href": "ng build --base-href ./",
     "git-build": "npm run build-href && npm run delete:docs && npm run copy:dist",
     "delete:docs": "del docs",
-    "copy:dist": "copyfiles dist/curriculun-vitae/browser/* ./docs -f"
+    "copy:dist": "copyfiles -a dist/curriculun-vitae/browser/* ./docs -f"
   },
   "private": true,
   "dependencies": {

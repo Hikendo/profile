@@ -1,0 +1,197 @@
+{
+  "profesionalProfile": {
+    "name":"José Manuel Martínez Antonio",
+    "data": {
+      "email": "josema.k303@gmail.com",
+      "phoneNumber": "712 213 9696",
+      "address": "El Oro, Estado de México",
+      "linkedin": "https://www.linkedin.com/in/jos%C3%A9-manuel-mart%C3%ADnez-antonio-487a4813a/",
+      "github": "https://github.com/Hikendo",
+      "url":"https://hikendo.github.io/profile/#/dashboard/welcome",
+      "imgUrl":"assets/pepe.jpg"
+
+    },
+    "abstract":"Soy un desarrollador con más de 8 años de experiencia como Ingeniero en Computación especializado en Desarrollo Web, con especialización en tecnologías como JavaScript, HTML, CSS, Angular y React. Mi trayectoria me ha permitido participar en la planificación de sprints, definición de historias de usuario, análisis de requisitos y diseño de módulos. La codificación de componentes, módulos, servicios y su integración continua en sistemas de control de versiones ha sido una de mis principales responsabilidades. En mi último proyecto, como parte del equipo de Softtek, colaboré como Desarrollador Web utilizando la herramienta Business Automation Workflow (BAW) de IBM, lo que me permitió aprender sobre BPMN (Business Process Model Notation) para analizar componentes heredados, ejecutar pruebas y migrar servicios. Me caracterizo por ser proactivo, trabajar en equipo y estar comprometido con la excelencia en cada tarea. Mi enfoque se centra en encontrar soluciones efectivas ante cualquier desafío, seguido de un análisis exhaustivo para mejorar y optimizar procesos. Simplificar y hacer eficiente cada actividad es mi objetivo principal. Estoy convencido de que mi experiencia y habilidades pueden ser un valioso aporte para su equipo, donde puedo seguir creciendo y contribuyendo al éxito de los proyectos. ``El éxito se construye con la proactividad de cada individuo y la fuerza del trabajo en equipo; Juntos, no solo alcanzamos nuestras metas, sino que las superamos``",
+    "workExperience": [
+      {
+        "jobTitle":"Web Developer",
+        "enterprise":"Softtek",
+        "startDate":"9/28/2022",
+        "endDate":"9/15/2023",
+        "activities":[
+          "Analicé componentes con notación BPMN, evaluando scripts, dependencias, procesos y flujos de trabajo.",
+          "Estimé los tiempos para cada fase del proyecto, garantizando un cronograma eficiente.",
+          "Realicé pruebas unitarias en el Process Portal BAW para asegurar la calidad y el funcionamiento óptimo de los componentes.",
+          "Gestioné ramas de desarrollo, manteniendo un control riguroso del código en evolución.",
+          "Desarrollé y probé consultas en SOAP XML, integrándolas en los flujos del sistema.",
+          "Elaboré Test Cases en BPM para validar los procesos implementados.",
+          "Migré componentes de servicios integrados a web services, adoptando una arquitectura de microservicios.",
+          "Modelé procesos de negocio en Process Designer BPM BAW de manera eficiente y precisa.",
+          "Brindé soporte y actualicé scripts, coaches views e interfaces con HTML, CSS y JavaScript para mejorar la experiencia del usuario y la compatibilidad con estándares actuales."
+        ]
+      },
+      {
+        "jobTitle":"Administrador de servidores / Web Developer",
+        "enterprise":"CETED - FES Acatlán UNAM",
+        "startDate":"7/20/2019",
+        "endDate":"7/15/2022",
+        "activities":[
+          "Analicé, desarrollé y actualicé componentes de plataformas Moodle para asegurar su funcionalidad y relevancia.",
+          "Personalicé temas web basados en Moodle con JavaScript, HTML, CSS, Mustache y PHP para mejorar la experiencia del usuario.",
+          "Documenté arquitecturas cliente-servidor, servidores espejo y planes de migración a AWS.",
+          "Generé manuales de usuario y procedimientos de mantenimiento.",
+          "Auxilié en la publicación de contenido web variado de autoría docente para alumnos.",
+          "Integré APIs de AWS, Google y Microsoft Azure en Moodle.",
+          "Desarrollé reportes en Excel para análisis estadísticos de usuarios.",
+          "Optimicé procesos del servidor, como respaldos y procesos cron.",
+          "Capacité y di soporte técnico al personal administrativo, docente y estudiantil de forma remota y presencial.",
+          "Realicé tareas administrativas como el alta de sitios Moodle y la matriculación de usuarios.",
+          "Analicé y personalicé usuarios, roles y permisos en Moodle para garantizar un entorno seguro.",
+          "Modifiqué módulos PHP de Moodle según las necesidades del proyecto.",
+          "Administré bases de datos SQL usando MariaDB, MySQL Workbench y terminales Linux.",
+          "Generé transacciones SQL de altas de cuentas estudiantiles, actualizaciones y consultas.",
+          "Generé reportes SQL usando procedimientos almacenados con parámetros.",
+          "Programé respaldos periódicos.",
+          "Optimicé configuraciones.",
+          "Administré servidores Linux basados en CentOS y Ubuntu.",
+          "Generé usuarios, roles y llaves de acceso SSH para usuarios Linux.",
+          "Optimicé configuraciones.",
+          "Configuré virtual hosts, dominios, certificados SSL, firewalls OWASP.",
+          "Instalé desde cero plataformas Moodle.",
+          "Migré servidores Linux",
+          "Instalé desde cero servidores Linux Rocky Linux, servidores web y de base de datos.",
+          "Configuré servidores de respaldo."
+
+        ]
+      },
+      {
+        "jobTitle":"Web Developer",
+        "enterprise":"ECA BUSINESS GROUP",
+        "startDate":"6/15/2017",
+        "endDate":"3/28/2018",
+        "activities":[
+          "Generé componentes, módulos y servicios Angular reutilizables, mejorando la experiencia del usuario.",
+          "Integré el consumo de servicios web API con Angular, integrando datos dinámicamente en el Front End.",
+          "Implementé autenticación basada en JWT para asegurar datos y privacidad.",
+          "Participé en el diseño de bases de datos relacionales en PostgreSQL para almacenar datos georreferenciados.",
+          "Participé en la generación de un visor geográfico con Leaflet, Angular y PostgreSQL para visualizar datos geoespaciales interactivamente.",
+          "Generé informes de estado, diagramas de flujo y modelos entidad-relación para una documentación clara del proyecto.",
+          "Administré plataformas basadas en WordPress.",
+          "Personalicé temas y componentes en WordPress con CSS, JS y PHP para adaptarlos a las necesidades de los proyectos.",
+          "Creé servicios End Point API con Laravel para una comunicación eficiente y segura entre módulos del sistema.",
+          "Implementé operaciones CRUD en MySQL y PHP Laravel.",
+          "Desarrollé un módulo de proyección de datos con tablas, gráficos y mapas usando librerías JavaScript."
+        ]
+      }
+
+    ],
+    "education":[
+      {
+        "academicDegree":"Ingeniería en Computación",
+        "institution":"Universidad Autónoma del Estado de México",
+        "startDate":"2010",
+        "endDate":"2015"
+      }
+    ],
+    "technicalSkills":[
+      {
+        "skill": "HTML5" ,
+        "level":85
+      },
+      {
+        "skill": "JavaScript" ,
+        "level":95
+      },
+      {
+        "skill": "Angular" ,
+        "level":85
+      },
+      {
+        "skill": "React" ,
+        "level":75
+      },
+      {
+        "skill": "CSS3" ,
+        "level":70
+      },
+      {
+        "skill": "PHP" ,
+        "level":70
+      },
+      {
+        "skill": "SQL" ,
+        "level":80
+      }
+    ],
+    "interpersonalSkills":[
+     {"softSkill": "Comunicación efectiva", "level": 90},
+     {"softSkill": "Trabajo en equipo", "level": 95},
+     {"softSkill": "Liderazgo", "level": 70},
+     {"softSkill": "Resolución de conflictos", "level": 80},
+     {"softSkill": "Empatía", "level": 100},
+     {"softSkill": "Negociación", "level": 85},
+     {"softSkill": "Adaptabilidad", "level": 70},
+     {"softSkill": "Creatividad", "level": 95},
+     {"softSkill": "Proactivo", "level": 95},
+     {"softSkill": "Comprometido con los objetivos", "level": 99},
+     {"softSkill": "Toma de decisiones", "level": 90}
+    ],
+    "languages":[
+      {
+        "language":"Español",
+        "speechLevel":98,
+        "writingLevel":95,
+        "readingLevel":99
+      },
+      {
+        "language":"Ingles",
+        "speechLevel":60,
+        "writingLevel":80,
+        "readingLevel":95
+
+      }
+    ],
+    "courses":[
+      { "name": "Angular: De cero a experto", "institution": "Udemy", "file": "./assets/diplomas/Angular-1-min.svg" },
+
+      { "name": "Tableau Training", "institution": "simpl¡Learn", "file": "./assets/diplomas/Tableu-1-min.svg" },
+      { "name": "Máster en SQL Server: Desde Cero a Nivel Profesional [2024]", "institution": "Udemy", "file": "./assets/diplomas/SQL-1-min.svg" },
+      { "name": "Microservicios con spring boot, cloud security Docker y APIs", "institution": "Udemy", "file": "./assets/diplomas/springBoot-1-min.svg" },
+      { "name": "SCRUM Fundamentals Certified", "institution": "SCRUMstudy", "file": "./assets/diplomas/ScrumFundamentalsCertified-1-min.svg" },
+      { "name": "Inglés", "institution": "LearnShip", "file": "./assets/diplomas/InglesNivel10-1-min.svg" },
+      { "name": "Process Modeling with IBM Business Process Manager Standard V8.5.7", "institution": "Global Knowledge", "file": "./assets/diplomas/BAW_IBM-1-min.svg" },
+
+      { "name": "Design Microservices Architecture with Patterns & Principles", "institution": "Udemy", "file": "./assets/diplomas/microservicios-1-min.svg" },
+      { "name": "Principios Solid y Clean Code", "institution": "Udemy", "file": "./assets/diplomas/solidCleanCode-1-min.svg" },
+      { "name": "Advanced Object Oriented Analysis of Hard Problems using UML", "institution": "Udemy", "file": "./assets/diplomas/POO_UML-1-min.svg" },
+      { "name": "GIT+Github: Todo un sistema de control de versiones desde cero", "institution": "Udemy", "file": "./assets/diplomas/gitGithub-1-min.svg" },
+      { "name": "TypeScript: Tu completa guía y manual de mano", "institution": "Udemy", "file": "./assets/diplomas/typescript-1-min.svg" },
+
+      { "name": "Agile Business Analysis: Getting / Writing Lean Requirements", "institution": "Udemy", "file": "./assets/diplomas/AgileRequirements-1-min.svg" },
+      { "name": "Curso Maestro de Algoritmos y Estructuras de Datos", "institution": "Udemy", "file": "./assets/diplomas/AlogoritmosEstructuras-1-min.svg" },
+      { "name": "Arquitectura Software Moderna: DDD, Eventos, Microservicios", "institution": "Udemy", "file": "./assets/diplomas/arquitecturaMicroservicios-1-min.svg" },
+      { "name": "BPMN for business analysts", "institution": "Udemy", "file": "./assets/diplomas/bpmn-1-min.svg" },
+      { "name": "Building Microservices with Quarkus", "institution": "Udemy", "file": "./assets/diplomas/buildMicroservicesQuarkus-1-min.svg" },
+      { "name": "Business Analysis Fundamentals - ECBA, CCBA, CBAP endorsed", "institution": "Udemy", "file": "./assets/diplomas/businessAnalysis-1-min.svg" },
+      { "name": "Identify & Define the Problem with Business Analysis", "institution": "Udemy", "file": "./assets/diplomas/BusinessAnalysisDefine-1-min.svg" },
+      { "name": "Business Analysis: Working with Use Cases", "institution": "Udemy", "file": "./assets/diplomas/CasosDeUso-1-min.svg" },
+      { "name": "Mastering Data Modeling Fundamentals", "institution": "Udemy", "file": "./assets/diplomas/DataModeling-1-min.svg" },
+      { "name": "DevOps, CI/CD (Continuous Integration/Delivery for Beginners", "institution": "Udemy", "file": "./assets/diplomas/DevOps-1-min.svg" },
+      { "name": "Docker for the Absolute Beginner - Hands On - DevOps", "institution": "Udemy", "file": "./assets/diplomas/Docker-1-min.svg"},
+
+      { "name": "Trabajando con datos en la Web", "institution": "Udemy", "file": "./assets/diplomas/DtaWeb-1-min.svg" },
+      { "name": "GitLab CI: Pipelines, CI/CD and DevOps for Beginners", "institution": "Udemy", "file": "./assets/diplomas/gitLab-1-min.svg" },
+      { "name": "IBM BAW", "institution": "Udemy", "file": "./assets/diplomas/IBM_BAW-1-min.svg" },
+      { "name": "Master en JavaScript: Aprender JS, jQuery, Angular, NodeJS", "institution": "Udemy", "file": "./assets/diplomas/JavaScript-1-min.svg" },
+      { "name": "Business Analysis Modeling Skills & Techniques", "institution": "Udemy", "file": "./assets/diplomas/ModelingSkillTechniques-1-min.svg" },
+      { "name": "OpenShift for the Absolute Beginners - Hands-on", "institution": "Udemy", "file": "./assets/diplomas/OpenShift-1-min.svg" },
+      { "name": "Oracle SOA Suite 12c-Advanced", "institution": "Udemy", "file": "./assets/diplomas/OracleSOA-1-min.svg" },
+      { "name": "Accessing Relational Databases with Quarkus", "institution": "Udemy", "file": "./assets/diplomas/Quarkus-1-min.svg" },
+      { "name": "SQL for NEWBS: Weekender Crash Course", "institution": "Udemy", "file": "./assets/diplomas/SqlForNewbs-1-min.svg" },
+      { "name": "Starting with Quarkus", "institution": "Udemy", "file": "./assets/diplomas/startingQuarkus-1-min.svg" },
+      { "name": "Linux Command Line Basics", "institution": "Udemy", "file": "./assets/diplomas/terminalLinux-1-min.svg" }
+    ]
+  }
+
+
+}
