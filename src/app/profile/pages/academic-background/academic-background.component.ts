@@ -14,6 +14,6 @@ export default class AcademicBackgroundComponent {
   private userProfile =inject(UserService);
 
 
-  public user=computed(()=> this.userProfile.user());
+  public user=computed(()=> this.userProfile.user()?.profesionalProfile.courses);
 
 }
