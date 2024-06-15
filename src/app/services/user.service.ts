@@ -6,6 +6,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 
 import { Observable, of, tap } from 'rxjs';
 import { MenuProfile } from '../interfaces/menu-profile';
+import { faAddressCard, faBuildingUser, faChalkboardUser, faUser, faUserGear, faUserTie } from '@fortawesome/free-solid-svg-icons';
 
 @Injectable({
   providedIn: 'root'
@@ -14,34 +15,44 @@ export class UserService {
 
   private readonly baseUrl: string = environment.baseUrl;
 
-  public menuProfile= signal<MenuProfile[]>(this.getInitialValueMenu() || [
+
+
+  public menuProfile= signal<MenuProfile[]>( [
     {
       nameItem: 'info-user',
       describe: 'Datos Generales',
+      faIcon: faAddressCard,
       show:true
+
 
     },
     {
       nameItem: 'abstract',
       describe: 'Perfil Profesional',
+      faIcon: faUserTie,
       show:false
+
 
     },
     {
       nameItem: 'jobs',
       describe: 'Experiencia',
+      faIcon: faBuildingUser,
       show:false
+
 
     },
     {
       nameItem: 'skills',
       describe: 'Habilidades',
+      faIcon: faUserGear,
       show:false
 
     },
     {
       nameItem: 'courses',
       describe: 'Formación Adicional',
+      faIcon: faChalkboardUser,
       show:false
 
     },
@@ -67,12 +78,12 @@ export class UserService {
 
   public toggleShowMenu( item : string):void{
     // alert(item);
-     this.menuProfile.update
      this.menuProfile.update( menuUpdate =>{
          return menuUpdate.map( menu => {
 
            if (menu.nameItem === item)
              {
+              console.log({menu})
                return {...menu, show : true}
              }
              return {...menu, show : false}

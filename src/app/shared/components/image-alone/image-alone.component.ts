@@ -21,9 +21,7 @@ export default class ImageAloneComponent {
   private userProfile =inject(UserService);
 
 
-  goBack() {
-    this.location.back();
-  }
+
 
 
   public user=computed(()=> this.userProfile.user()?.profesionalProfile.courses);

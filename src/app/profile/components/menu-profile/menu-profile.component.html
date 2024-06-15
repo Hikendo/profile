@@ -1,13 +1,14 @@
 <div class="float-menu ">
   <ul>
-    <li class=""><button> <fa-icon [icon]="faMenu"></fa-icon> Menú </button></li>
+    <li class="text-left"><button> <fa-icon [icon]="faMenu"></fa-icon> Menú </button></li>
     @for (menuItem of menuFloat.menuProfile(); track menuItem.nameItem) {
-      <li >
-        <button [disabled]="menuItem.show"
-        [routerLink]="'/dashboard/profile/'+menuItem.nameItem"
-        (click)="toggleShowMenu(menuItem.nameItem)"  >{{menuItem.describe}}</button>
+      <li class="text-left">
+        <button class="text-left" [disabled]="menuItem.show"
+        [routerLink]="['/dashboard/profile/',menuItem.nameItem]"
+        (click)="toggleShowMenu(menuItem.nameItem)" > <fa-icon [icon]="menuItem.faIcon"></fa-icon> {{menuItem.describe}}</button>
       </li>
     }
+    <li class="text-left bg-deep-orange-200" (click)="goBack()"><button> <fa-icon [icon]="faBack"></fa-icon> Regresar </button></li>
 
 
   </ul>
