@@ -15,12 +15,19 @@ export interface ProfesionalProfile {
 }
 
 export interface Course {
+  id:          number;
   name:        string;
-  institution: string;
-  file:        string;
+  institution: Institution;
+  url:         string;
 }
 
-
+export enum Institution {
+  GlobalKnowledge = "Global Knowledge",
+  LearnShip = "LearnShip",
+  SCRUMstudy = "SCRUMstudy",
+  SimplLearn = "simpl¡Learn",
+  Udemy = "Udemy",
+}
 
 export interface Data {
   email:       string;
@@ -63,7 +70,6 @@ export interface WorkExperience {
   endDate:    string;
   activities: string[];
 }
-
 
 
  export enum Technologies  {

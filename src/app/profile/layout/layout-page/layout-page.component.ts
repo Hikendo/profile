@@ -1,11 +1,10 @@
-import { Component, inject, signal } from '@angular/core';
-import {  RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import {  Router, RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import  UserComponent  from '../../pages/user/user.component';
 import SummaryComponent from '../../pages/summary/summary.component';
 import JobExperienceComponent from '../../pages/job-experience/job-experience.component';
 import SkillsComponent from '../../pages/skills/skills.component';
 import AcademicBackgroundComponent from '../../pages/academic-background/academic-background.component';
-import { UserService } from '../../../services/user.service';
 import { MenuProfileComponent } from '../../components/menu-profile/menu-profile.component';
 
 
@@ -19,6 +18,15 @@ import { MenuProfileComponent } from '../../components/menu-profile/menu-profile
   templateUrl: './layout-page.component.html',
   styleUrl: './layout-page.component.css'
 })
-export default class LayoutPageComponent {
+export default class LayoutPageComponent implements OnInit {
+  constructor(private router: Router) {
+
+  }
+
+  ngOnInit() {
+   /* setTimeout(() => {
+      this.router.navigate(['/dashboard/profile/info-user']);
+    }, 0);*/
+  }
 
 }

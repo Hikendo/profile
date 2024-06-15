@@ -3,7 +3,12 @@ bkg-animate rounded-xl p-5 bg-opacity-5 py-2 sm:py-8 lg:mt-18 mt-20 backdrop-blu
   <h1 class="text-4xl text-center font-bold tracking-tight text-gray-900 sm:text-6xl txt-move "> 👋🏽 ¡Hola soy José, un Front-End Developer! </h1>
   <p class="mt-6 text-4xl leading-8 text-slate-700 rounded ">Te agradezco la visita y te invito a conectar conmigo.</p>
   <div class="mt-10 flex items-center justify-center gap-x-6">
-    <a [routerLink]="['/dashboard/profile']" routerLinkActive="router-link-active"  class="rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400">Visitar Perfil</a>
-    <a href="#" class="text-sm font-semibold leading-6 text-gray-900"> Ir a templates <span aria-hidden="true">→</span></a>
+    <a [routerLink]="['/dashboard/profile/info-user']" routerLinkActive="router-link-active"
+    (click)="toggleShowMenu('info-user')"
+    class="rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm
+     hover:bg-green-700 focus-visible:outline focus-visible:outline-2
+     focus-visible:outline-offset-2 focus-visible:outline-red-400">Visitar Perfil</a>
+    <a [routerLink]="['/dashboard/templates']" routerLinkActive="router-link-active"
+     class="text-sm font-semibold leading-6 text-gray-900"> Ir a templates <span aria-hidden="true">→</span></a>
   </div>
 </div>

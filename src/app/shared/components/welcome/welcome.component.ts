@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-welcome',
@@ -9,5 +10,14 @@ import { RouterLink } from '@angular/router';
   styleUrl: './welcome.component.css'
 })
 export default class WelcomeComponent {
+  public menuFloat= inject(UserService)
 
+  toggleShowMenu( item : string):void{
+   // alert(item);
+
+     this.menuFloat.toggleShowMenu(item);
+
+
+
+  }
 }

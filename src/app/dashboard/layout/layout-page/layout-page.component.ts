@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { HeadComponent } from '../../../shared/components/head/head.component';
 import { BackgroundComponent } from '../../../shared/components/background/background.component';
 import { FooterComponent } from '../../../shared/components/footer/footer.component';
@@ -12,5 +12,14 @@ import { FooterComponent } from '../../../shared/components/footer/footer.compon
   styleUrl: './layout-page.component.css'
 })
 export default class LayoutPageComponent {
+  constructor(private router: Router) {
 
+  }
+
+  ngOnInit() {
+  /*  setTimeout(() => {
+    this.router.navigate(['/dashboard/welcome']);
+  }, 0);
+*/
+  }
 }

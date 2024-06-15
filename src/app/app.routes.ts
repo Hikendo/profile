@@ -33,6 +33,10 @@ export const routes: Routes = [
                     path: 'courses',
                       loadComponent: ()=> import('./profile/pages/academic-background/academic-background.component').then( c => c.default),
                     },
+                  {
+                    path: 'course/:id',
+                      loadComponent: ()=> import('./shared/components/image-alone/image-alone.component').then( c => c.default),
+                    },
 
                 ]
             },

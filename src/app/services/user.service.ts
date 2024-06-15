@@ -1,7 +1,7 @@
 import { Injectable, computed, inject, signal } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Profile } from '../interfaces/profile';
+import { Course, Profile } from '../interfaces/profile';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 import { Observable, of, tap } from 'rxjs';
@@ -52,6 +52,8 @@ export class UserService {
   private _user= toSignal(this.connectUser())
 
   public user= computed(() => this._user());
+
+
   constructor() {
     this.connectUser().subscribe();
 
@@ -61,6 +63,7 @@ export class UserService {
     const url:string = `${this.baseUrl}/profile.json`;
     return this.http.get<Profile>(url);
   }
+
 
   public toggleShowMenu( item : string):void{
     // alert(item);

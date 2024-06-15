@@ -1,28 +1,21 @@
 <h4 class="pt-4 pl-5 text-center">Formación Académica adicional</h4>
 
 <div class="pl-8 pr-14 pb-14">
-  <div class="grid grid-cols-3 p-5 rounded-lg  backdrop-blur-xl text-justify text-lg">
-@defer (on timer(1s)) {
-  @for (item of user() ; track $index) {
-    <div class="max-w-sm rounded overflow-hidden shadow-lg p-5">
-      <img class="w-full" [src]="item.file" alt="Imagen representativa">
-      <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2">Curso: {{item.name}}</div>
-        <p class="text-gray-700 text-base">
-        Institución:  {{item.institution}}
-        </p>
-      </div>
-    </div>
+@defer (on timer(2s) ) {
+  <div class="grid grid-cols-3 p-5 rounded-lg
+  backdrop-blur-xl text-center ">
 
+  @for (course of user() ; track $index) {
+    <app-gallery  [course]="course"></app-gallery>
 
   }
+</div>
+
 }@placeholder {
   <app-loading></app-loading>
 
 }
 
-</div>
 
 </div>
-
 
