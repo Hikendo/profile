@@ -96,7 +96,7 @@
     "technicalSkills":[
       {
         "skill": "HTML5" ,
-        "level":85
+        "level":90
       },
       {
         "skill": "JavaScript" ,
@@ -104,15 +104,15 @@
       },
       {
         "skill": "Angular" ,
-        "level":85
+        "level":95
       },
       {
         "skill": "React" ,
-        "level":75
+        "level":85
       },
       {
         "skill": "CSS3" ,
-        "level":70
+        "level":80
       },
       {
         "skill": "PHP" ,
@@ -120,7 +120,7 @@
       },
       {
         "skill": "SQL" ,
-        "level":80
+        "level":90
       }
     ],
     "interpersonalSkills":[
@@ -145,8 +145,8 @@
       },
       {
         "language":"Ingles",
-        "speechLevel":60,
-        "writingLevel":80,
+        "speechLevel":70,
+        "writingLevel":90,
         "readingLevel":95
 
       }

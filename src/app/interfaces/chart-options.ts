@@ -1,4 +1,4 @@
-import { ApexAxisChartSeries, ApexChart, ApexDataLabels, ApexLegend, ApexNonAxisChartSeries, ApexPlotOptions, ApexStroke, ApexTitleSubtitle, ApexXAxis, ApexYAxis } from "ng-apexcharts";
+import { ApexAxisChartSeries, ApexChart, ApexDataLabels, ApexFill, ApexLegend, ApexMarkers, ApexPlotOptions, ApexStroke, ApexTitleSubtitle, ApexXAxis, ApexYAxis } from "ng-apexcharts";
 
 export interface ChartOptions  {
   series?: ApexAxisChartSeries ;
@@ -10,5 +10,7 @@ export interface ChartOptions  {
   title?: ApexTitleSubtitle;
   plotOptions?: ApexPlotOptions;
   legend?: ApexLegend;
-  stroke: ApexStroke;
+  stroke?: ApexStroke;
+  fill?: ApexFill;
+  markers?: ApexMarkers;
 };

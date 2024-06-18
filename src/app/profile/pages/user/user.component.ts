@@ -4,6 +4,7 @@ import { UserService } from '../../../services/user.service';
 import { Profile } from '../../../interfaces/profile';
 import { CommonModule } from '@angular/common';
 import { LoadingComponent } from '../../../shared/components/loading/loading.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user',

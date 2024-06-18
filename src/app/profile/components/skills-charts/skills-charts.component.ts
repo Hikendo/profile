@@ -100,13 +100,14 @@ export class SkillsChartsComponent implements OnInit,OnDestroy{
   }
 
   buildData(skillType:string){
+    const colorComboBar=['#29323F','#838cad']
     if(skillType==="skillSoft"){
       return this.skills!.interpersonalSkills.map( (skill:InterpersonalSkill) => ({x: skill.softSkill, y: skill.level}));
     }
     if(skillType==="skillTechnical"){
       return this.skills!.technicalSkills.map( (skill: TechnicalSkill) => ({x: skill.skill, y: skill.level}));
     }
-    return this.skills!.languages.map( (skill: Language) => ({name: skill.language, data: [skill.readingLevel,skill.speechLevel, skill.writingLevel]}));
+    return this.skills!.languages.map( (skill: Language, index) => ({name: skill.language, data: [skill.readingLevel,skill.speechLevel, skill.writingLevel], color: colorComboBar[index]}));
   }
 
 }

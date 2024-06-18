@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {  ApexChart } from 'ng-apexcharts';
+import { ApexChart, ApexDataLabels } from 'ng-apexcharts';
 import { ChartOptions } from '../interfaces/chart-options';
 
 
@@ -36,14 +36,22 @@ export class ChartApexService {
               },
               yaxis:{
                 min:0
+              },
+             plotOptions:{
+              bar: {
+                distributed: false,
+                horizontal: true,
               }
+             }
+
         }
       }
 
         return {
           series: [
             {
-              data: skillCharts
+              data: skillCharts,
+              color:'#29323F'
             }
           ],
           legend: {
@@ -56,11 +64,69 @@ export class ChartApexService {
           yaxis: {
             min: 0 // Esto asegura que la escala del eje Y comience en 0
           },
+          markers: {
+            colors: ['#F47B20']
+          },
           plotOptions: {
             treemap: {
               distributed: true,
-              enableShades: false
-            }
+              enableShades: false,
+              colorScale:{
+
+                ranges: [
+                  {
+                    from: 0,
+                    to: 69,
+                    color: '#3b4455'
+                  },
+                  {
+                    from: 70,
+                    to: 90,
+                    color: '#838cad'
+                  },
+                  {
+                    from: 90,
+                    to: 95,
+                    color: '#5f6881'
+                  },
+                  {
+                    from: 95,
+                    to: 100,
+                    color: '#29323F'
+                  }
+                ],
+              }
+            },
+            bar: {
+              distributed: false,
+              horizontal: true,
+              colors:{
+                ranges: [
+                  {
+                    from: 0,
+                    to: 25,
+                    color: '#e0f7fa'
+                  },
+                  {
+                    from: 25,
+                    to: 50,
+                    color: '#b2ebf2'
+                  },
+                  {
+                    from: 50,
+                    to: 70,
+                    color: '#29323E'
+                  },
+                  {
+                    from: 70,
+                    to: 100,
+                    color: '#29323F'
+                  }
+                ]
+              }
+            },
+
+
           },
 
         };
