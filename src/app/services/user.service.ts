@@ -17,7 +17,7 @@ export class UserService {
 
 
 
-  public menuProfile= signal<MenuProfile[]>( [
+  public menuProfile= signal<MenuProfile[]>(this.getInitialValueMenu() || [
     {
       nameItem: 'info-user',
       describe: 'Datos Generales',
