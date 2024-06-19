@@ -47,8 +47,8 @@ export class SkillsChartsComponent implements OnInit,OnDestroy{
       this.isFilterVisible = false;
     }
   }
-  public posX: number = 0;
-  public posY: number = 0;
+ // public posX: number = 0;
+ // public posY: number = 0;
 
 
 
@@ -61,8 +61,8 @@ export class SkillsChartsComponent implements OnInit,OnDestroy{
       this.showToolsButtonLabel= 'Show Tools';
     }
     this.isFilterVisible = !this.isFilterVisible;
-    this.posX = event.clientX + 10;
-    this.posY = event.clientY;
+   // this.posX = event.clientX + 10;
+   // this.posY = event.clientY;
   }
   public softSkillChar: FormGroup= this.fb.group({
     softSkill:['bar',[Validators.required]]
@@ -102,9 +102,17 @@ export class SkillsChartsComponent implements OnInit,OnDestroy{
   buildData(skillType:string){
     const colorComboBar=['#29323F','#838cad']
     if(skillType==="skillSoft"){
+      this.chartSelected=  {
+        height: 400,
+        type: 'treemap'
+      };
       return this.skills!.interpersonalSkills.map( (skill:InterpersonalSkill) => ({x: skill.softSkill, y: skill.level}));
     }
     if(skillType==="skillTechnical"){
+      this.chartSelected=  {
+        height: 400,
+        type: 'radar'
+      };
       return this.skills!.technicalSkills.map( (skill: TechnicalSkill) => ({x: skill.skill, y: skill.level}));
     }
     return this.skills!.languages.map( (skill: Language, index) => ({name: skill.language, data: [skill.speechLevel, skill.writingLevel,skill.readingLevel], color: colorComboBar[index]}));

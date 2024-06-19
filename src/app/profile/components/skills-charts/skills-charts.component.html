@@ -5,7 +5,7 @@
      font-semibold hover:text-white py-2 px-4 border border-blue-500
       hover:border-transparent rounded">{{showToolsButtonLabel}} </button>
 @if (isFilterVisible) {
-      <form [formGroup]="softSkillChar" class="soft-skill-form" [ngStyle]="{'top.px': posY, 'left.px': posX}">
+      <form [formGroup]="softSkillChar" class="soft-skill-form" >
         <div class="float-right">
           <button (click)="toggleFilterForm($event)" class="bg-red-500 hover:bg-red-700 text-white font-bold rounded">
             &nbsp; X &nbsp;

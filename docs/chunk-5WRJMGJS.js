@@ -1,0 +1,1 @@
+import{Gb as r,Lb as s,ba as o,rb as a,sb as i}from"./chunk-SLK6PVAY.js";var m=(()=>{let e=class e{};e.\u0275fac=function(n){return new(n||e)},e.\u0275cmp=o({type:e,selectors:[["app-diplomas"]],standalone:!0,features:[s],decls:2,vars:0,template:function(n,d){n&1&&(a(0,"p"),r(1,"diplomas works!"),i())}});let t=e;return t})();export{m as default};
