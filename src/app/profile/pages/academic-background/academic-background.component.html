@@ -1,11 +1,11 @@
 <h4 class="pt-4 pl-5 text-center">Formación Académica adicional</h4>
 
-<div class="pl-8 pr-14 pb-14">
+<div class="pl-8 pr-14 pb-14 ">
 @defer (on timer(2s) ) {
-  <div class="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 p-5 rounded-lg
+  <div class="grid grid-cols-3 max-w-xl:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 gap-4 rounded-lg
   backdrop-blur-xl text-center ">
+  @for (course of user() ; track $index;) {
 
-  @for (course of user() ; track $index) {
     <app-gallery  [course]="course"></app-gallery>
 
   }

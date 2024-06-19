@@ -1,16 +1,16 @@
 
-@defer (on viewport ) {
-
+@defer (on timer(300ms) ) {
   <div class="max-w-sm rounded overflow-hidden shadow-lg p-5" >
-    <img [srcset]="course?.url" [alt]="course?.name" [routerLink]="['/dashboard/profile/course/',course?.id]">
-    <div class="px-6 py-4">
+    <img [srcset]="course?.url" class="h-auto max-w-full rounded-lg"
+    [alt]="course?.name" [routerLink]="['/dashboard/profile/course/',course?.id]"/>
+    <!--div class="px-6 py-4">
       <div class="font-bold text-lg mb-2">{{course?.name}}</div>
       <p class="text-gray-700 text-base">
         {{course?.institution}}
       </p>
-    </div>
+    </!--div -->
   </div>
-<!-- Pop-up (inicialmente oculto) -->
+
 
 
 

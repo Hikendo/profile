@@ -28,6 +28,8 @@
 
               },
               "src/assets",
+              "src/assets/*.png",
+
               "src/assets/profile.json",
                "src/assets/diplomas/*.svg"
             ],

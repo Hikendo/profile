@@ -3,11 +3,11 @@ import { Router, RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faAddressCard, faAngleLeft, faBars, faBuildingUser, faChalkboardUser, faClose, faGears, faRotateLeft, faUserGear, faUserTie, faUsersGear } from '@fortawesome/free-solid-svg-icons';
 import { UserService } from '../../../services/user.service';
-import { Location } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 @Component({
   selector: 'app-menu-profile',
   standalone: true,
-  imports: [RouterLink, FontAwesomeModule],
+  imports: [RouterLink, FontAwesomeModule, CommonModule],
   templateUrl: './menu-profile.component.html',
   styleUrl: './menu-profile.component.css'
 })
@@ -38,7 +38,11 @@ ngOnInit(): void {
   //Add 'implements OnInit' to the class.
   console.log(this.menuFloat.menuProfile())
 }
+public showText: boolean = true;
 
+  toggleText() {
+    this.showText = !this.showText;
+  }
 
   toggleShowMenu( item : string):void{
    // alert(item);

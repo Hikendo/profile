@@ -107,7 +107,7 @@ export class SkillsChartsComponent implements OnInit,OnDestroy{
     if(skillType==="skillTechnical"){
       return this.skills!.technicalSkills.map( (skill: TechnicalSkill) => ({x: skill.skill, y: skill.level}));
     }
-    return this.skills!.languages.map( (skill: Language, index) => ({name: skill.language, data: [skill.readingLevel,skill.speechLevel, skill.writingLevel], color: colorComboBar[index]}));
+    return this.skills!.languages.map( (skill: Language, index) => ({name: skill.language, data: [skill.speechLevel, skill.writingLevel,skill.readingLevel], color: colorComboBar[index]}));
   }
 
 }

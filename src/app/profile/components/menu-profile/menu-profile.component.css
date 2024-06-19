@@ -38,3 +38,10 @@
   pointer-events: none;
 
 }
+.float-menu ul li button * :hover {
+  pointer-events: none !important;
+
+}
+.noHoverButton * {
+  pointer-events: none;
+}
